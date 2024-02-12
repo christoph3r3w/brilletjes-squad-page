@@ -2,7 +2,9 @@
 
 # team leden
 [Anna kyra](https://github.com/Anna-Kyra)
+
 [Vicktor](https://github.com/Vikkeyeftimov)
+
 [Christopher](https://github.com/christoph3r3w)
 
 # team links 
