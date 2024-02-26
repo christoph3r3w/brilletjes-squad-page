@@ -3,7 +3,7 @@
 # team leden
 [Anna-Kyra](https://github.com/Anna-Kyra)
 
-[Vicktor](https://github.com/Vikkeyeftimov)
+[Viktor](https://github.com/Vikkeyeftimov)
 
 [Christopher](https://github.com/christoph3r3w)
 
