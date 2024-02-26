@@ -738,21 +738,115 @@ body .screen:has(:hover,:focus,:active) {
     overflow: scroll;
     container-name:window_game ;
     container-type:inline-size ;
+
+    
+  }
+
+ 
+
+  .window_game_items{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: auto;
+    padding: 2%;
+    gap: 2cqi;
+    
+    >li{
+      display: flex;
+      flex-direction: column;
+      gap: 10%;
+      border-radius: var(--g-c);
+      >:is(h1,h2,p,button){
+        margin-inline:auto;
+        text-align: center;
+      }
+
+	h3{
+		margin-top: 3% ;
+		font-size: 1.2rem;
+	}
+
+      button{
+        border: 3px solid var(--base-b);
+        padding-inline: 3rem;
+        padding-block: 3% ;
+
+
+      }
+    }
+  }
+
+  
+
+  .intro_s_squad{
+    background-color: #118fe8;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+
+/*** squad window */
+#squad{
+  inset: 0;
+  width: 100%;
+
+	.window_content{
+		padding: 0;
+		margin: 0;
+		grid-area: c;
+		width: 100%;
+		overflow-y: scroll;
+		height: 100cqh;
+    color: var(--base-Text-b);
+		/* display: grid;
+  grid-template-columns: repeat(auto,minmax(0px,min-content)); */
+	  }
+
+    dialog{
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #83817a93;
+      display: grid;
+      place-content: center;
+    }
+
+    
+
+  .window_content ul{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+
+    }
+
+  .window_content li{
+    display: flex;
+    width: 100%;
+    height: 3rem;
+    outline: solid;
   }
 
   .fullscreen_btn{
-    position: absolute;
+    position: fixed;
     bottom: 2%;
     right: 2%;
     z-index: 5;
     width: 2rem;
     aspect-ratio: 1;
-    border:2px solid ;
+    border:2px solid var(--primary-y-o) ;
     border-radius: 40%;
     display: grid;
     grid-template-areas: "d";
     place-content: center;
     color: var(--base-Text-b);
+
+  
   
   }
 
@@ -769,53 +863,10 @@ body .screen:has(:hover,:focus,:active) {
       display: none;
     }
   }
-
-  .intro_screen{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction:column;
-    height: 100%;
-    
-    >li{
-      display: flex;
-      flex-direction: column;
-      gap: 10%;
-      border-radius: var(--g-c);
-      >:is(h1,h2,p,button){
-        margin-inline:auto;
-        text-align: center;
-      }
-
-	h1{
-		margin-top: 3% ;
-		font-size: 4rem;
-	}
-
-      button{
-        border: 3px solid var(--base-b);
-        padding-inline: 3rem;
-        padding-block: 3% ;
-
-
-      }
-    }
-  }
-
-  .intro_s_game{
-    background-color: red ;
-    width: 100%;
-    height: 50%;
-  }
-
-  .intro_s_squad{
-    background-color: #118fe8;
-    width: 100%;
-    height: 50%;
-  }
+ 
 }
 
-#game:has(.fullscreen_btn>input:checked){
+#squad:has(.fullscreen_btn>input:checked){
   --top-height:9cqh;
   inset: 0cqi;
   width: 100%;
@@ -869,48 +920,10 @@ body .screen:has(:hover,:focus,:active) {
     >li{height: 100%;}
   }
 
-  .intro_s_game{
-    background-color: red ;
-    width: 50%;
-  }
-
   .intro_s_squad{
     background-color: #118fe8;
-    width: 50%;
-  }
-}
-
-/*** squad window */
-#squad{
-
-
-	.window_content{
-		padding: 0;
-		margin: 0;
-		grid-area: c;
-		width: 100%;
-		overflow-y: scroll;
-		height: 70cqh;
-    color: var(--base-Text-b);
-		/* display: grid;
-  grid-template-columns: repeat(auto,minmax(0px,min-content)); */
-	  }
-
-  .window_content ul{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: auto;
-
-    }
-
-  .window_content li{
-    display: flex;
     width: 100%;
-    height: 3rem;
-    outline: solid;
   }
-
- 
 }
 
 /* taskbar elements */
