@@ -25,6 +25,64 @@
         <% }) %>
     </ul> -->
 
+    <ul class="squad_filter">
+        <!-- squad.id 3 -->
+        <li>
+            <p>squad <%= data.squad_id %></p>
+        </li>
+        <!-- squad.id 4 -->
+        <li>
+            <p>squad <%= data.squad_id %></p>
+        </li>
+        <!-- squad.id 5 -->
+        <li>
+            <p>squad <%= data.squad_id %></p>
+        </li>
+        <!-- teacher -->
+        <li>
+            <p>squad <%= data.squad_id %></p>
+        </li>
+    </ul>
+
+
+    <!-- her you can choose your person/character -->
+    <% if ( data.squad_id == 3 ) { %>
+     <ul class="character_grid">
+        <li></li>
+     </ul>
+   <% } else if ( data.squad_id == 4) { %>
+    <ul class="character_grid">
+        <li></li>
+     </ul>
+    <% } else if ( data.squad_id == 5) { %>
+    <ul class="character_grid">
+        <ul >
+            <li></li>
+         </ul>
+    <% } else  { %>
+    <ul class="character_grid">
+        <h1>choose squad</h1>
+    </ul>
+    <% } %>
+
+
+    <!-- here you see the selected person/character -->
+    <article class="selected_character">
+        <div>
+            <img src="" alt="">
+            <div></div>
+        </div>
+        <ul>
+            <li></li>
+            <li></li>
+        </ul>
+    </article>
+
+
+         
+    
+
+
 
 
 
