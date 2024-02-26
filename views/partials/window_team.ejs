@@ -1,0 +1,27 @@
+<%= window_team %>
+
+<%- include('./window_head', {window_head: '',window_type:window_type}) %>  
+
+<%- include('./window_aside_bottom', {window_a_b: ''}) %> 
+
+
+<section class="window_content">
+    
+        <div class="profile">
+            <img class="profile_bg" src="<%= data.avatar %>" alt="profile background image" >
+            <div><img src="<%= data.avatar %>" alt="avatar"></div>
+            <h2><%= data.name %></h2>
+            <h3><%= data.surname %></h3>
+        </div>
+    
+        <div class="info">
+            <ul>
+                <li><a href=<%= data.website %>>Github</a></li>
+                
+                <li><legend> squad-id</legend><p><%= data.squad_id %></p></li>
+            </ul>
+        </div>
+   
+
+
+</section>

@@ -1,0 +1,22 @@
+<%= window_squad %>
+
+<%- include('./window_head', {window_head: ''}) %>  
+<%- include('./window_aside_bottom', {window_a_b: ''}) %> 
+
+<section class="window_content">
+
+    <a href="/">Back</a>
+    <h1>Students of </h1>
+    <h2><%= data.name %></h2>
+    
+    <p>Squad: <%= data.squad_id %>
+    <ul>
+        <% persons.forEach(person => { %>
+            <li><a href="./person/<%= person.id %>"><%= person.name %></a>, squad_id <%= person.squad_id %>,<%= person.prefix %></li>
+        <% }) %>
+    </ul>
+
+</section>
+
+
+

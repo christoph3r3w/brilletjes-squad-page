@@ -1,0 +1,118 @@
+<%- include('./partials/head') %>
+
+<main class="screen">
+
+  <section class="desktop">
+
+    <ul class="desktop_items">
+      <li><button href="#"> <img src="images/icon/839.ico" alt=""><div><p>home</p></div></button></li>
+      <li><button popovertarget="team" popovertargetaction="show" > <img src="/images/icon/1012.ico" alt="personal card icon"><div><p>Team</p></div></button></li>
+      <!-- <li><button popovertarget="music" > <img src="images/icon/1221.ico" alt="music icon"><div><p>Music</p></div></button></li> -->
+      <li><button popovertarget="sprint" popovertargetaction="show" > <img src="images/icon/1224.ico" alt="sprint icon"><div><p>sprint</p></div></button></li>
+      <li><button popovertarget="game" popovertargetaction="show" > <img src="/images/tumblr_b08776446c99e97ddb6379663d96b2ab_f289af9d_541.png" alt="game icon"><div><p>squad-game</p></div></button></li>
+      <li><button><a href="https://github.com/christoph3r3w/brilletjes-squad-page"><img src="images/github.png" sizes="80" alt=""><div><p>github</p></div></a></button></li>
+    </ul>
+    
+    <button class="trash_can"><a href="#"> <img src="images/icon/261.ico" alt=""></a></button>
+
+         
+      <div popover="manual" id="team" class="window_card" >
+        <%- include('./partials/window_team', {window_team: '',window_type:'team'}) %> 
+      </div>
+
+      <div popover="manual" id="sprint" class="window_card" >
+        <%- include('./partials/window_sprint', {window_sprint: '',window_type:'sprint'}) %> 
+      </div>
+
+      <div popover="manual" id="game" class="window_card" >
+        <%- include('./partials/window_game', {window_game: '',window_type:'game'}) %> 
+      </div>
+
+      <div popover="manual" id="squad" class="window_card" >
+        <%- include('./partials/window_squad', {window_squad: '',window_type:'squad'}) %> 
+      </div>
+
+
+      <!-- start button menu -->
+    <div popover anchor="start_b" id="start_menu">
+      <header class="start_bar_header">
+        <img src="<%= data.avatar %>" alt="header avatar">
+        <p><%= data.name %></p>
+      </header>
+      <div>
+        <menu class="main_icons">
+          <li><a href="#"> <img src="images/icon/839.ico" alt=""><div><p>home</p></div></a></li>
+          <li><button popovertarget="personal"> <img src="images/chris icon lowlowres.png" alt=""><div><p>personal</p></div></button></li>
+          <li><button popovertarget="music"> <img src="images/icon/1221.ico" alt=""><div><p>Music</p></div></button></li>
+          <li><button popovertarget="sprint" > <img src="images/icon/1224.ico" alt=""><div><p>sprint</p></div></button></li>
+          <li><a href="<%= data.website %>"><img src="images/github.png" sizes="80" alt=""><div><p>github</p></div></a></li>
+    
+        </menu>
+
+        <menu class="other_icon">
+          <li>
+            <img src="" alt="">
+            <p></p>
+          </li>
+          <li>
+            <img src="" alt="">
+            <p></p>
+          </li>
+          <li>
+            <img src="" alt="">
+            <p></p>
+          </li>
+          <li>
+            <img src="" alt="">
+            <p></p>
+          </li>
+          <li>
+            <img src="" alt="">
+            <p></p>
+          </li>
+          <li>
+            <img src="" alt="">
+            <p></p>
+          </li>
+          <li>
+            <img src="" alt="">
+            <p></p>
+          </li>
+        </menu>
+      </div>
+
+    </div>
+
+   
+
+  </section>
+ 
+  <footer class="taskbar">
+    <nav>
+      <button id="start_b" class="start" popovertarget="start_menu" popovertargetaction="show"><img src="images/pngwing.com.png" alt="windows logo" sizes="20" > <p>start</p></button>
+      <div class="bar"></div>
+      <div class="extra_icons">
+        <ul>
+          <li><button class="window_theme"><img src="images/icon/1005.ico" alt="theme button"></button></li>
+          <li><a href="#"><img src="images/icon/975.ico" alt="info button"> </a></li>
+          <li><a href="#"><img src="images/icon/952.ico" alt="internet icon"> </a></li>
+          <li><p class="current_T">11:11</p></li>
+        </ul>
+
+        
+      </div>
+    </nav>
+  </footer>
+  
+
+
+
+
+  
+</main>
+
+
+
+<%- include('./partials/foot') %>
+
+
