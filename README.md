@@ -1,7 +1,7 @@
 # brilletjes-squad-page
 
 # team leden
-[Anna kyra](https://github.com/Anna-Kyra)
+[Anna-Kyra](https://github.com/Anna-Kyra)
 
 [Vicktor](https://github.com/Vikkeyeftimov)
 
