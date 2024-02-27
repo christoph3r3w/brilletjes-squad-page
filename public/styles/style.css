@@ -317,7 +317,8 @@ body .screen:has(:hover,:focus,:active) {
 
   &:is(:nth-last-of-type(1),:nth-of-type(2),:nth-last-of-type(2)) img{scale: .8;}
 
-  &:nth-of-type(4){width: 100%;scale:1;background:green; button{width: max-content; img{width: 4rem;} }}
+  &:nth-of-type(4){width:min-content;scale:1;background:green; button{width: max-content; >img{width: 4rem;} }}
+
 
   &:hover{
     filter: brightness(1.05);
@@ -463,12 +464,21 @@ body .screen:has(:hover,:focus,:active) {
     }
   }
 
-  menu[type=toolbar]{
+  /* menu[type=toolbar]{
     display: flex;
     justify-content: start;
     padding-inline: 3%;
     padding-block: 1%;
     gap: 5%;
+    cursor:not-allowed;
+    color: var(--base-Text-b);
+  } */
+
+  menu[type=toolbar]{
+    display: flex;
+    padding-inline: 1%;
+    padding-block: .8%;
+    gap: 2%;
     cursor:not-allowed;
     color: var(--base-Text-b);
   }
@@ -877,13 +887,158 @@ body .screen:has(:hover,:focus,:active) {
       display: none;
     }
   }
+
+  .intro_screen{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction:column;
+    height: 100%;
+    
+    >li{
+      display: flex;
+      flex-direction: column;
+      gap: 10%;
+      border-radius: var(--g-c);
+      >:is(h1,h2,p,button){
+        margin-inline:auto;
+        text-align: center;
+      }
+
+	h1{
+		margin-top: 3% ;
+		font-size: 4rem;
+	}
+
+      button{
+        border: 3px solid var(--base-b);
+        padding-inline: 3rem;
+        padding-block: 3% ;
+
+
+      }
+    }
+  }
+
+  .intro_s_game{
+    background-color: red ;
+    width: 100%;
+    height: 50%;
+  }
+
+  .intro_s_squad{
+    background-color: #118fe8;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/*** squad window */
+#squad{
+  inset: 0;
+  width: 100%;
+
+	.window_content{
+		padding: 0;
+		margin: 0;
+		grid-column-start: b;
+		grid-column-end: c;
+    
+		width: 100%;
+		overflow-y: scroll;
+		height: 100cqh;
+    color: var(--base-Text-b);
+		
+	  }
+
+    dialog{
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #83817a93;
+      display: grid;
+      place-content: center;
+    }
+
+    
+
+  .window_content ul{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+
+    }
+
+  .window_content li{
+    display: flex;
+    width: 100%;
+    height: 3rem;
+    outline: solid;
+  }
+
+  .fullscreen_btn{
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    z-index: 5;
+    width: 2rem;
+    aspect-ratio: 1;
+    border:2px solid var(--primary-y-o) ;
+    border-radius: 40%;
+    display: grid;
+    grid-template-areas: "d";
+    place-content: center;
+    color: var(--base-Text-b);
+
+  }
+
+  input[type=checkbox]{
+    grid-area: d;
+    z-index: 2;
+    width: 100%;
+    aspect-ratio: 1;    
+  }
+
+  svg{
+    grid-area: d;
+    &:nth-of-type(2){
+      display: none;
+    }
+  }
  
 }
 
 /*** squad layout */
 #squad .window_content{
   display: grid;
-  grid-template-columns: repeat(auto,minmax(0px,min-content));
+  grid-template-areas: "f c c c"
+                       "f c c c"
+                       ". c c c"
+                       "s s s s"
+                       "s s s s";
+  overflow: scroll;
+  gap: 1rem;
+
+  .squad_filter{
+    grid-area: f;
+    display: flex;
+    flex-direction: column;
+    background-color:  green;
+  }
+
+  .character_grid{
+    grid-area: c;
+    background-color:  rgb(46, 107, 193);
+    display: grid;
+    grid-template-areas: auto;
+  }
+
+  .selected_character{
+    grid-area: s;
+    display: flex;
+
+    background-color:  rgb(187, 148, 85);
+  }
 }
 
 #squad:has(.fullscreen_btn>input:checked){
@@ -893,17 +1048,14 @@ body .screen:has(:hover,:focus,:active) {
   z-index: 5;
   
   &.window_card{
-    grid-template-areas:
-        " a a a"
-        " c c c"
-        " c c c"
-        " c c c" !important;
+    
       }
   .window_content{
       width: 100%;
       /* height: 100%; */
-      grid-row: 1/-1;
-      margin-top: var(--top-height);
+      grid-column-start: b;
+      grid-column-end: c;
+      /* margin-top: var(--top-height); */
   }
   .window_header{
       height: var(--top-height) ;
