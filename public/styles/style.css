@@ -1,3 +1,18 @@
+/* FONTS */
+@font-face {
+  font-family: FedraEleven;
+  src: url(/images/game/fonts/Fedra11-Normal.otf) format("otf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: FedraEleven;
+  src: url(/public/images/game/fonts/Fedra11-Bold.otf) format("otf");
+  font-weight: 800;
+  font-style: bold;
+}
+
 * {
   box-sizing:border-box;
   margin: 0;
