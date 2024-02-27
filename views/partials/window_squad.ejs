@@ -29,6 +29,9 @@
         <!-- squad.id 3 -->
         <li>
             <p>squad <%= data.squad_id %></p>
+           <form action="/views/partials/window_squad.ejs" method="post">
+                <button type="submit"> X</button>
+           </form>
         </li>
         <!-- squad.id 4 -->
         <li>
@@ -46,35 +49,30 @@
 
 
     <!-- her you can choose your person/character -->
-    <% if ( data.squad_id == 3 ) { %>
-     <ul class="character_grid">
-        <li><%= data.id %> 3</li>
-     </ul>
-   <% } else if ( data.squad_id == 4) { %>
     <ul class="character_grid">
-        <li>4</li>
-     </ul>
-    <% } else if ( data.squad_id == 5) { %>
-    <ul class="character_grid">
-        <ul >
-            <li>5</li>
-         </ul>
-    <% } else  { %>
-    <ul class="character_grid">
-        <h1>choose squad</h1>
+        <% if ( data.squad_id == 3 ) { %>
+        
+            <li><%= data.id %> 3</li>
+        
+        <% } else if ( data.squad_id == 4) { %>
+            <li>4</li>
+        <% } else if ( data.squad_id == 5) { %>
+                <li>5</li>
+        <% } else  { %>
+            <h1>choose squad</h1>
+        <% } %>
     </ul>
-    <% } %>
 
 
     <!-- here you see the selected person/character -->
     <article class="selected_character">
         <div>
             <img src="" alt="">
-            <div></div>
+            <div>987654</div>
         </div>
         <ul>
-            <li></li>
-            <li></li>
+            <li>12345</li>
+            <li>234567</li>
         </ul>
     </article>
 

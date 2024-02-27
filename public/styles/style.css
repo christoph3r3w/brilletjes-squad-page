@@ -693,10 +693,10 @@ body .screen:has(:hover,:focus,:active) {
 }
 
 @container container-P (width < 37cqi) {
-.window_content{
-  grid-column-start: b;
-  grid-column-end: c;
-}
+  .window_content{
+    grid-column-start: b;
+    grid-column-end: c;
+  }
 
   .file_explorer{
     display: none;
@@ -813,126 +813,6 @@ body .screen:has(:hover,:focus,:active) {
   }
 }
 
-
-
-/*** squad window */
-#squad{
-  inset: 0;
-  width: 100%;
-
-	.window_content{
-		padding: 0;
-		margin: 0;
-		grid-area: c;
-		width: 100%;
-		overflow-y: scroll;
-		height: 100cqh;
-    color: var(--base-Text-b);
-		
-	  }
-
-    dialog{
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #83817a93;
-      display: grid;
-      place-content: center;
-    }
-
-    
-
-  .window_content ul{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: auto;
-
-    }
-
-  .window_content li{
-    display: flex;
-    width: 100%;
-    height: 3rem;
-    outline: solid;
-  }
-
-  .fullscreen_btn{
-    position: fixed;
-    bottom: 2%;
-    right: 2%;
-    z-index: 5;
-    width: 2rem;
-    aspect-ratio: 1;
-    border:2px solid var(--primary-y-o) ;
-    border-radius: 40%;
-    display: grid;
-    grid-template-areas: "d";
-    place-content: center;
-    color: var(--base-Text-b);
-
-  
-  
-  }
-
-  input[type=checkbox]{
-    grid-area: d;
-    z-index: 2;
-    width: 100%;
-    aspect-ratio: 1;    
-  }
-
-  svg{
-    grid-area: d;
-    &:nth-of-type(2){
-      display: none;
-    }
-  }
-
-  .intro_screen{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction:column;
-    height: 100%;
-    
-    >li{
-      display: flex;
-      flex-direction: column;
-      gap: 10%;
-      border-radius: var(--g-c);
-      >:is(h1,h2,p,button){
-        margin-inline:auto;
-        text-align: center;
-      }
-
-	h1{
-		margin-top: 3% ;
-		font-size: 4rem;
-	}
-
-      button{
-        border: 3px solid var(--base-b);
-        padding-inline: 3rem;
-        padding-block: 3% ;
-
-
-      }
-    }
-  }
-
-  .intro_s_game{
-    background-color: red ;
-    width: 100%;
-    height: 50%;
-  }
-
-  .intro_s_squad{
-    background-color: #118fe8;
-    width: 100%;
-    height: 100%;
-  }
-}
-
 /*** squad window */
 #squad{
   inset: 0;
@@ -946,7 +826,7 @@ body .screen:has(:hover,:focus,:active) {
     
 		width: 100%;
 		overflow-y: scroll;
-		height: 100cqh;
+		height: 110cqh;
     color: var(--base-Text-b);
 		
 	  }
@@ -1015,9 +895,15 @@ body .screen:has(:hover,:focus,:active) {
                        "f c c c"
                        ". c c c"
                        "s s s s"
-                       "s s s s";
+                       "s s s s"
+                       ". . . .";
   overflow: scroll;
   gap: 1rem;
+  padding: 1% ;
+  padding-bottom: 5% ;
+ 
+  container-type:size ;
+  container-name:squad ;
 
   .squad_filter{
     grid-area: f;
