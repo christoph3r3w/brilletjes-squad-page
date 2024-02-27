@@ -15,6 +15,8 @@ const squadData = await fetchJson(apiUrl + '/squad')
 // Maak een nieuwe express app aan
 const app = express()
 
+const element = []
+
 // Stel ejs in als template engine
 app.set('view engine', 'ejs')
 
@@ -41,6 +43,8 @@ app.get('/', function (request, response) {
 // Maak een POST route voor de index
 app.post('/', function (request, response) {
   // Er is nog geen afhandeling van POST, redirect naar GET op /
+
+
   response.redirect(303, '/')
 })
 
