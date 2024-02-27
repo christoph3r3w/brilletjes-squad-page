@@ -803,8 +803,7 @@ body .screen:has(:hover,:focus,:active) {
 		overflow-y: scroll;
 		height: 100cqh;
     color: var(--base-Text-b);
-		/* display: grid;
-  grid-template-columns: repeat(auto,minmax(0px,min-content)); */
+		
 	  }
 
     dialog{
@@ -864,6 +863,12 @@ body .screen:has(:hover,:focus,:active) {
     }
   }
  
+}
+
+/*** squad layout */
+#squad .window_content{
+  display: grid;
+  grid-template-columns: repeat(auto,minmax(0px,min-content));
 }
 
 #squad:has(.fullscreen_btn>input:checked){
