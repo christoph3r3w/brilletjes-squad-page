@@ -1,16 +1,18 @@
 /* FONTS */
 @font-face {
-  font-family: FedraEleven;
-  src: url(/images/game/fonts/Fedra11-Normal.otf) format("otf");
-  font-weight: 300;
+  font-family: 'fedraelevennormal';
+  src: url('/images/game/fonts/fedra11-normal-webfont.woff2') format('woff2'),
+       url('/images/game/fonts/fedra11-normal-webfont.woff') format('woff');
+  font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: FedraEleven;
-  src: url(/public/images/game/fonts/Fedra11-Bold.otf) format("otf");
-  font-weight: 800;
-  font-style: bold;
+  font-family: 'fedraelevenbold';
+  src: url('/images/game/fonts/fedra11-bold-webfont.woff2') format('woff2'),
+       url('/images/game/fonts/fedra11-bold-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
 }
 
 * {
