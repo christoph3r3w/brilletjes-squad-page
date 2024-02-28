@@ -919,8 +919,16 @@ body .screen:has(:hover,:focus,:active) {
       flex-grow: 1;
     } */
 
-    >label {
+    form:has(button) {
+      display: grid;
+      place-content: center;
       background-color: wheat ;
+      width: 100%;
+
+      >button{
+        width: 100%;
+        height: auto;
+      }
     }
 
     &:has(input [type="radio"]:checked) label{
