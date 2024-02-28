@@ -54,12 +54,12 @@
     
 <!--
     <ul class="squad_filter">
-        <!-- squad.id 3 -->
+       
         <li>
             <p>squad <%= data.squad_id %></p>
            <form class="elmt" action="/" method="post">
 
-            <!-- <label for="water">
+             <label for="water">
                 <input type="radio" name="water" id="water" value="1">
                     <p>water</p>
                 </input>
@@ -78,22 +78,22 @@
                 <input type="radio" name="wind" id="wind" value="4">
                     <p>wind</p>
                 </input>
-            </label> -->
+            </label> 
 
 
                 <button type="submit"> X</button>
                 
            </form>
         </li>
-        <!-- squad.id 4 -->
+       
         <li>
             <p>squad <%= data.squad_id %></p>
         </li>
-        <!-- squad.id 5 -->
+      
         <li>
             <p>squad <%= data.squad_id %></p>
         </li>
-        <!-- teachers -->
+      
         <li>
             <p>squad <%= data.squad_id %> teachers</p>
         </li>
@@ -122,12 +122,21 @@
     <!-- here you see the selected person/character -->
     <article class="selected_character">
         <div>
-            <img src="" alt="">
             <div>987654</div>
         </div>
         <ul>
-            <li>12345</li>
-            <li>234567</li>
+            <li>
+                <h2>Name</h2>
+                <img src="/images/game/icons/earth.png" alt="" height="50px" width="50px">
+            </li>
+            <li><p>Hier moet de bio komen</p></li>
+            <li>
+                <ul class="stats">
+                    <li><img src="/images/game/icons/hart.png" alt="" height="30px" width="30px"><p>HP 15</p></li>
+                    <li><img src="/images/game/icons/earth.png" alt="" height="30px" width="30px"><p>ATK 10</p></li>
+                    <li><img src="/images/game/icons/chield.png" alt="" height="30px" width="30px"><p>DEF 25</p></li>
+                </ul>
+            </li>
         </ul>
     </article>
 
