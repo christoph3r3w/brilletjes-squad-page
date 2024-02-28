@@ -1,6 +1,6 @@
 /* FONTS */
 @font-face {
-  font-family: 'fedraelevennormal';
+  font-family: 'FedraEleven';
   src: url('/images/game/fonts/fedra11-normal-webfont.woff2') format('woff2'),
        url('/images/game/fonts/fedra11-normal-webfont.woff') format('woff');
   font-weight: normal;
@@ -8,7 +8,7 @@
 }
 
 @font-face {
-  font-family: 'fedraelevenbold';
+  font-family: 'FedraEleven';
   src: url('/images/game/fonts/fedra11-bold-webfont.woff2') format('woff2'),
        url('/images/game/fonts/fedra11-bold-webfont.woff') format('woff');
   font-weight: bold;
@@ -27,7 +27,8 @@
 
 html {
   scroll-snap-type:y mandatory ;
-  font-family: 'Tahoma', Geneva, Verdana, sans-serif;
+  /* font-family: 'Tahoma', Geneva, Verdana, sans-serif; */
+   
 }
 
 
