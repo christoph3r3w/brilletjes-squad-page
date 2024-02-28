@@ -6,7 +6,7 @@ import fetchJson from './helpers/fetch-json.js'
 
 // Stel het basis endpoint in
 const apiUrl = 'https://fdnd.directus.app/items'
-const data = await fetchJson('https://fdnd.directus.app/items/person/65')
+const data = await fetchJson('https://fdnd.directus.app/items/person/40')
 console.log(data.id +" "+ data.data.name)
 
 // Haal alle squads uit de WHOIS API op
@@ -14,6 +14,8 @@ const squadData = await fetchJson(apiUrl + '/squad')
 
 // Maak een nieuwe express app aan
 const app = express()
+
+const element = []
 
 // Stel ejs in als template engine
 app.set('view engine', 'ejs')
@@ -41,6 +43,8 @@ app.get('/', function (request, response) {
 // Maak een POST route voor de index
 app.post('/', function (request, response) {
   // Er is nog geen afhandeling van POST, redirect naar GET op /
+
+
   response.redirect(303, '/')
 })
 

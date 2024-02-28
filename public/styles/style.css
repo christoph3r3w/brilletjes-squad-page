@@ -909,7 +909,22 @@ body .screen:has(:hover,:focus,:active) {
     grid-area: f;
     display: flex;
     flex-direction: column;
-    /* background-color:  green; */
+
+  
+    overflow-y: scroll;
+
+    /* &:nth-child(n){
+      flex-grow: 1;
+    } */
+
+    >label {
+      background-color: wheat ;
+    }
+
+    &:has(input [type="radio"]:checked) label{
+      background-color: wheat;
+    }
+
   }
 
   .character_grid{
@@ -924,6 +939,10 @@ body .screen:has(:hover,:focus,:active) {
     display: flex;
 
     background-color:  rgb(187, 148, 85);
+  }
+
+  .elmt{
+
   }
 }
 
