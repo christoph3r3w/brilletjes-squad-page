@@ -913,7 +913,14 @@ body .screen:has(:hover,:focus,:active) {
     flex-direction: column;
 
   
-    overflow-y: scroll;
+    .squad_filter_box{
+      width: 100%;
+      overflow-y:scroll;
+
+      &::-webkit-scrollbar{
+        display: none;
+      }
+    }
 
     /* &:nth-child(n){
       flex-grow: 1;
