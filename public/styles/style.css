@@ -20,13 +20,12 @@
   appearance: none;
   list-style: none;
   text-decoration: none;
-  font-family: 'Tahoma', Geneva, Verdana, sans-serif;
-
 }
 
 
 html {
   scroll-snap-type:y mandatory ;
+  font-family: 'Tahoma', Geneva, Verdana, sans-serif;
 }
 
 
@@ -891,6 +890,7 @@ body .screen:has(:hover,:focus,:active) {
 /*** squad layout */
 #squad .window_content{
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-areas: "f c c c"
                        "f c c c"
                        ". c c c"
@@ -898,7 +898,7 @@ body .screen:has(:hover,:focus,:active) {
                        "s s s s"
                        ". . . .";
   overflow: scroll;
-  gap: 1rem;
+  gap: 5rem;
   padding: 1% ;
   padding-bottom: 5% ;
  
@@ -909,7 +909,8 @@ body .screen:has(:hover,:focus,:active) {
     grid-area: f;
     display: flex;
     flex-direction: column;
-    background-color:  green;
+
+  
     overflow-y: scroll;
 
     /* &:nth-child(n){
@@ -923,11 +924,12 @@ body .screen:has(:hover,:focus,:active) {
     &:has(input [type="radio"]:checked) label{
       background-color: wheat;
     }
+
   }
 
   .character_grid{
     grid-area: c;
-    background-color:  rgb(46, 107, 193);
+    /* background-color:  rgb(46, 107, 193); */
     display: grid;
     grid-template-areas: auto;
   }

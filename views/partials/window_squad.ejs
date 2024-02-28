@@ -2,7 +2,7 @@
 
 <%- include('./window_head', {window_head: ''}) %>  
 
-<section class="window_content">
+<section class="window_content game-element-fir">
 
 
     <!-- <dialog open class="intro_screen">
@@ -25,6 +25,34 @@
         <% }) %>
     </ul> -->
 
+
+    <section class="squad_filter">
+        <h2>Filter</h2>
+        <ul class="squad_filter_box pixel-corners">
+            <!-- squad.id 3 -->
+            <li>
+                <p>squad <%= data.squad_id %></p>
+               <form action="/views/partials/window_squad.ejs" method="post">
+                    <button type="submit"> X</button>
+               </form>
+            </li>
+            <!-- squad.id 4 -->
+            <li>
+                <p>squad <%= data.squad_id %></p>
+            </li>
+            <!-- squad.id 5 -->
+            <li>
+                <p>squad <%= data.squad_id %></p>
+            </li>
+            <!-- teachers -->
+            <li>
+                <p>squad <%= data.squad_id %> teachers</p>
+            </li>
+        </ul>
+    </section>
+
+    
+<!--
     <ul class="squad_filter">
         <!-- squad.id 3 -->
         <li>
@@ -70,22 +98,25 @@
             <p>squad <%= data.squad_id %> teachers</p>
         </li>
     </ul>
-
+-->
 
     <!-- her you can choose your person/character -->
-    <ul class="character_grid">
-        <% if ( data.squad_id == 3 ) { %>
-        
-            <li><%= data.id %> 3</li>
-        
-        <% } else if ( data.squad_id == 4) { %>
-            <li>4</li>
-        <% } else if ( data.squad_id == 5) { %>
-                <li>5</li>
-        <% } else  { %>
-            <h1>choose squad</h1>
-        <% } %>
-    </ul>
+    <section class="character_grid">
+        <h1>Choose your character</h1>
+        <ul class="character_grid_characters pixel-corners">
+            <% if ( data.squad_id == 3 ) { %>
+              
+                <li><%= data.id %> 3</li>
+            
+            <% } else if ( data.squad_id == 4) { %>
+                <li>4</li>
+            <% } else if ( data.squad_id == 5) { %>
+                    <li>5</li>
+            <% } else  { %>
+                <h1>choose squad</h1>
+            <% } %>
+        </ul>
+    </section>
 
 
     <!-- here you see the selected person/character -->

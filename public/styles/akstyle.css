@@ -1,0 +1,257 @@
+:root {
+  /* COLORS */
+  --color-card: #FFF5DC;
+  --color-card-dark: rgba(92, 66, 14, 0.36);
+  --color-mainLight: #F5F5F5;
+  --color-mainDark: #676E63;
+  --color-border: var(--color-mainDark);
+
+  /* IMAGES */
+  --background-img-front: url(/images/earth_front.jpg);
+  --background-img-back: url(/images/game/background/default_background.jpg);
+  --element-symbol: url('/images/icons/earth.png');
+  --element-symbol-atk: url('/images/icons/earth.png');
+  --card-shadow: #B8AA86;
+
+  font-size: 20px;
+}
+
+#squad .window_content{
+  padding: 3rem;
+
+  background:  var(--background-img-back);
+  background-size: cover;
+  background-position: center;
+
+    font-family: 'FedraEleven', serif;
+
+  &.game-element-earth {
+    --color-mainLight: #7CC655;
+    --color-mainDark: #3D6528;
+    --color-border: var(--color-mainDark);
+
+
+    --background-img-back: url('/images/game/background/earth_background.jpg');
+    --background-img-front: url('/images/game/background/earth_front.jpg');
+  }
+
+  &.game-element-water {
+    --color-mainLight: #7EF7E9;
+    --color-mainDark: #156969;
+    --color-border: var(--color-mainDark);
+
+
+    --background-img-back: url('/images/game/background/Underwater\ world_background.jpg');
+    --background-img-front: url('/images/game/background/earth_front.jpg');
+  }
+  &.game-element-fire {
+    --color-mainLight: #FFD869;
+    --color-mainDark: #842800;
+    --color-border: var(--color-mainDark);
+
+
+    --background-img-back: url('/images/game/background/fire-background.jpg');
+    --background-img-front: url('/images/game/background/earth_front.jpg');
+  }
+  &.game-element-wind {
+    --color-mainLight: #FFE1F0;
+    --color-mainDark: #725B84;
+    --color-border: var(--color-mainDark);
+
+
+    --background-img-back: url('/images/game/background/wind_background.jpg');
+    --background-img-front: url('/images/game/background/earth_front.jpg');
+  }
+
+
+    /* CHARACTER SELECTOR */
+    .character_grid {
+
+
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+
+      h1 {
+        padding: 0 .25em;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        color: var(--color-mainDark);
+
+        background-color: var(--color-mainLight);
+        
+        height: 2rem;
+      }
+
+      .character_grid_characters {
+        height: 100%;
+        /* display: block; */
+        --color-border: #B8AA86;
+        background-color: var(--color-card);
+      }
+    }
+
+    .squad_filter {
+      display: flex;
+      flex-direction: column;
+
+      min-width: 10rem;
+      gap: .5rem;
+      h2 {
+        color: var(--color-card);
+      }
+    }
+
+    .squad_filter_box {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      background-color: var(--color-mainLight);
+    }
+
+    &::after {
+      content: "";
+      background-image: url('/images/game/old_computerscreen.svg');
+      background-size: cover;
+      background-position: bottom;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.20; 
+      display: block;
+      pointer-events: none;
+      z-index: 1000;
+
+      mix-blend-mode: multiply;
+
+      animation: computer 1s infinite;
+    }
+}
+
+@keyframes computer {
+  0% {
+    top: 0px;
+  }
+
+  50% {
+    top: 0px;
+  }
+  51% {
+    top: -8px;
+  }
+
+  80% {
+    top: -8px;
+  }
+  81% {
+    top: 0px;
+  }
+
+  100% {
+    top: 0px;
+  }
+}
+
+
+
+/* PIXEL BORDERS */
+.pixel-corners,
+.pixel-corners--wrapper {
+  clip-path: polygon(0px calc(100% - 16px),
+    8px calc(100% - 16px),
+    8px calc(100% - 8px),
+    16px calc(100% - 8px),
+    16px 100%,
+    calc(100% - 16px) 100%,
+    calc(100% - 16px) calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 16px),
+    100% calc(100% - 16px),
+    100% 16px,
+    calc(100% - 8px) 16px,
+    calc(100% - 8px) 8px,
+    calc(100% - 16px) 8px,
+    calc(100% - 16px) 0px,
+    16px 0px,
+    16px 8px,
+    8px 8px,
+    8px 16px,
+    0px 16px);
+  position: relative;
+}
+.pixel-corners {
+  border: 8px solid transparent;
+}
+.pixel-corners--wrapper {
+  width: fit-content;
+  height: fit-content;
+}
+.pixel-corners--wrapper .pixel-corners {
+  display: block;
+  clip-path: polygon(8px 16px,
+    16px 16px,
+    16px 8px,
+    calc(100% - 16px) 8px,
+    calc(100% - 16px) 16px,
+    calc(100% - 8px) 16px,
+    calc(100% - 8px) calc(100% - 16px),
+    calc(100% - 16px) calc(100% - 16px),
+    calc(100% - 16px) calc(100% - 8px),
+    16px calc(100% - 8px),
+    16px calc(100% - 16px),
+    8px calc(100% - 16px));
+}
+.pixel-corners::after,
+.pixel-corners--wrapper::after {
+  content: "";
+  position: absolute;
+  clip-path: polygon(0px calc(100% - 16px),
+    8px calc(100% - 16px),
+    8px calc(100% - 8px),
+    16px calc(100% - 8px),
+    16px 100%,
+    calc(100% - 16px) 100%,
+    calc(100% - 16px) calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 16px),
+    100% calc(100% - 16px),
+    100% 16px,
+    calc(100% - 8px) 16px,
+    calc(100% - 8px) 8px,
+    calc(100% - 16px) 8px,
+    calc(100% - 16px) 0px,
+    16px 0px,
+    16px 8px,
+    8px 8px,
+    8px 16px,
+    0px 16px,
+    0px 50%,
+    8px 50%,
+    8px 16px,
+    16px 16px,
+    16px 8px,
+    calc(100% - 16px) 8px,
+    calc(100% - 16px) 16px,
+    calc(100% - 8px) 16px,
+    calc(100% - 8px) calc(100% - 16px),
+    calc(100% - 16px) calc(100% - 16px),
+    calc(100% - 16px) calc(100% - 8px),
+    16px calc(100% - 8px),
+    16px calc(100% - 16px),
+    8px calc(100% - 16px),
+    8px 50%,
+    0px 50%);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-border);
+  display: block;
+  pointer-events: none;
+}
+.pixel-corners::after {
+  margin: -8px;
+}
