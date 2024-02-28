@@ -948,7 +948,7 @@ body .screen:has(:hover,:focus,:active) {
     grid-area: s;
     display: flex;
 
-    background-color:  rgb(187, 148, 85);
+    /* background-color:  rgb(187, 148, 85); */
   }
 
   

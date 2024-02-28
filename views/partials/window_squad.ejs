@@ -53,6 +53,53 @@
 
     
 
+<!--
+    <ul class="squad_filter">
+       
+        <li>
+            <p>squad <%= data.squad_id %></p>
+           <form class="elmt" action="/" method="post">
+
+             <label for="water">
+                <input type="radio" name="water" id="water" value="1">
+                    <p>water</p>
+                </input>
+            </label>
+            <label for="fire">
+                <input type="radio" name="fire" id="fire" value="2">
+                    <p>fire</p>
+                </input>
+            </label>
+            <label for="earth">
+                <input type="radio" name="earth" id="earth" value="3">
+                    <p>earth</p>
+                </input>
+            </label>
+            <label for="wind">
+                <input type="radio" name="wind" id="wind" value="4">
+                    <p>wind</p>
+                </input>
+            </label> 
+
+
+                <button type="submit"> X</button>
+                
+           </form>
+        </li>
+       
+        <li>
+            <p>squad <%= data.squad_id %></p>
+        </li>
+      
+        <li>
+            <p>squad <%= data.squad_id %></p>
+        </li>
+      
+        <li>
+            <p>squad <%= data.squad_id %> teachers</p>
+        </li>
+    </ul>
+-->
 
 
     <!-- her you can choose your person/character -->
@@ -77,12 +124,21 @@
     <!-- here you see the selected person/character -->
     <article class="selected_character">
         <div>
-            <img src="" alt="">
             <div>987654</div>
         </div>
         <ul>
-            <li>12345</li>
-            <li>234567</li>
+            <li>
+                <h2>Name</h2>
+                <img src="/images/game/icons/earth.png" alt="" height="50px" width="50px">
+            </li>
+            <li><p>Hier moet de bio komen</p></li>
+            <li>
+                <ul class="stats">
+                    <li><img src="/images/game/icons/hart.png" alt="" height="30px" width="30px"><p>HP 15</p></li>
+                    <li><img src="/images/game/icons/earth.png" alt="" height="30px" width="30px"><p>ATK 10</p></li>
+                    <li><img src="/images/game/icons/chield.png" alt="" height="30px" width="30px"><p>DEF 25</p></li>
+                </ul>
+            </li>
         </ul>
     </article>
 
