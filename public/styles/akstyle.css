@@ -23,7 +23,8 @@
   background-size: cover;
   background-position: center;
 
-    font-family: 'FedraEleven', serif;
+  font-family: 'FedraEleven', serif;
+  height: 100%;
 
   &.game-element-earth {
     --color-mainLight: #7CC655;

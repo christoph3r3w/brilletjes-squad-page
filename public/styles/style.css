@@ -817,6 +817,10 @@ body .screen:has(:hover,:focus,:active) {
   inset: 0;
   width: 100%;
 
+  .window_header{
+    height: auto;
+  }
+
 	.window_content{
 		padding: 0;
 		margin: 0;
@@ -825,19 +829,19 @@ body .screen:has(:hover,:focus,:active) {
     
 		width: 100%;
 		overflow-y: scroll;
-		height: 110cqh;
+		/* height: 110cqh; */
     color: var(--base-Text-b);
 		
 	  }
 
-    dialog{
+    /* dialog{
       inset: 0;
       width: 100%;
       height: 100%;
       background-color: #83817a93;
       display: grid;
       place-content: center;
-    }
+    } */
 
     
 
@@ -890,20 +894,15 @@ body .screen:has(:hover,:focus,:active) {
 /*** squad layout */
 #squad .window_content{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-areas: "f c c c"
                        "f c c c"
                        ". c c c"
                        "s s s s"
-                       "s s s s"
-                       ". . . .";
+                       "s s s s";
   overflow: scroll;
   gap: 5rem;
-  padding: 1% ;
-  padding-bottom: 5% ;
- 
-  container-type:size ;
-  container-name:squad ;
+  padding: 1%;
+  padding-bottom: 50%;
 
   .squad_filter{
     grid-area: f;
@@ -941,40 +940,45 @@ body .screen:has(:hover,:focus,:active) {
     background-color:  rgb(187, 148, 85);
   }
 
-  .elmt{
-
-  }
+  
 }
 
 #squad:has(.fullscreen_btn>input:checked){
   --top-height:9cqh;
   inset: 0cqi;
   width: 100%;
-  z-index: 5;
+  z-index: 7;
+  /* grid-template-rows: var(--top-height) 1fr 1fr; */
   
-  &.window_card{
-    
-      }
+
   .window_content{
       width: 100%;
-      /* height: 100%; */
-      grid-column-start: b;
-      grid-column-end: c;
-      /* margin-top: var(--top-height); */
+      /* height: 100dvb; */
+      /* grid-column-start: b; */
+      /* grid-column-end: c; */
+      /* grid-row-start:1; */
+      /* grid-row-end:4; */
+      grid-area:1/1/4/-1;
+      /* margin-top: ; */
+      
+      /* margin-top:calc(var(--top-height) * -1 ); */
+      /* height:calc(100% + var(--top-height)); */
   }
   .window_header{
       height: var(--top-height) ;
       grid-area: a;
       menu[type=context]{display: none;}
-      menu[type=toolbar]{
+      /* menu[type=toolbar]{
         display: flex;
         padding-inline: 1%;
         padding-block: .8%;
         gap: 2%;
         cursor:not-allowed;
         color: var(--base-Text-b);
-      }
-
+      } */
+      /* menu[type=toolbar]{
+        display:none;
+      } */
   }
     
   .file_explorer{
