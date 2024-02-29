@@ -6,16 +6,20 @@ import fetchJson from './helpers/fetch-json.js'
 
 // Stel het basis endpoint in
 const apiUrl = 'https://fdnd.directus.app/items'
-const data = await fetchJson('https://fdnd.directus.app/items/person/40')
-console.log(data.id +" "+ data.data.name)
+
+const data_c = await fetchJson('https://fdnd.directus.app/items/person/40')
+const data_k = await fetchJson('https://fdnd.directus.app/items/person/41')
+const data_v = await fetchJson('https://fdnd.directus.app/items/person/15')
+console.log(data_k.data.id)
 
 // Haal alle squads uit de WHOIS API op
 const squadData = await fetchJson(apiUrl + '/squad')
-
+// console.log(squadData.data)
 // Maak een nieuwe express app aan
 const app = express()
 
-const element = []
+const game_element = [];
+// console.log(game_element)
 
 // Stel ejs in als template engine
 app.set('view engine', 'ejs')
@@ -32,14 +36,20 @@ app.get('/', function (request, response) {
   fetchJson(apiUrl + '/person').then((apiData) => {
     // apiData bevat gegevens van alle personen uit alle squads
     // Je zou dat hier kunnen filteren, sorteren, of zelfs aanpassen, voordat je het doorgeeft aan de view
-
+    
     // Render index.ejs uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
-    response.render('index', {persons: apiData.data, squads: squadData.data, data: data.data})
+    response.render('index', {
+      persons: apiData.data, 
+      squads: squadData.data, 
+      data_c: data_c.data,
+      data_v: data_v.data,
+      data_k: data_k.data
+    })
     // response.render('index', data)
 
   })
 })
-
+console.log()
 // Maak een POST route voor de index
 app.post('/', function (request, response) {
   // Er is nog geen afhandeling van POST, redirect naar GET op /
@@ -47,6 +57,59 @@ app.post('/', function (request, response) {
 
   response.redirect(303, '/')
 })
+
+
+// Maak een POST route voor de window squad
+// console.log("yes1")
+app.post('/', function (request, response) {
+  // Er is nog geen afhandeling van POST, redirect naar GET op /
+  
+  console.log(apiResponse)
+  fetchJson('https://fdnd.directus.app/items/person/40' ).then((apiResponse) => {
+
+  try {
+    apiData.data.custom = JSON.parse(apiData.data.custom)
+  } catch (error) {
+    apiResponse.data.custom = []
+  }
+
+
+  if (!apiResponse.data.custom.game_element) {
+    apiResponse.data.custom.game_element = []
+  } else if(request.body.element == "fire"){
+    console.log("fire")
+  } else if(request.body.element == "water") {
+    console.log("water")
+  } else if(request.body.element == "earth") {
+    console.log("earth")
+  } else if(request.body.element == "wind") {
+    console.log("wind")
+  }else{
+    console.log("default")
+  };
+
+  console.log("POST request successful");
+ 
+
+  fetch('https://fdnd.directus.app/items/person/' + request.params.id, {
+      method: 'PATCH',
+      body: JSON.stringify({
+        custom: apiResponse.data.custom
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8'
+      }
+    }).then((patchResponse) => {
+      // Redirect naar de persoon pagina
+      response.redirect(303, '/detail/' + request.params.id)
+    })
+  })
+  
+
+  response.redirect(303, '/');
+});
+
+
 
 // Maak een GET route voor een detailpagina met een request parameter id
 app.get('/person/:id', function (request, response) {

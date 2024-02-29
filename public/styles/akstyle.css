@@ -16,6 +16,31 @@
   font-size: 20px;
 }
 
+.screen,.window_card{
+  filter: brightness(1.09);
+
+  &::after {
+    content: "";
+    background-image: url('/images/game/old_computerscreen.svg');
+    background-size: cover;
+    background-position: bottom;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.10; 
+    display: block;
+    pointer-events: none;
+    z-index: 1000;
+
+    mix-blend-mode: multiply;
+
+    animation: computer 1s infinite;
+  }
+
+}
+
 #squad .window_content{
   padding: 3rem;
 
@@ -109,7 +134,7 @@
       background-color: var(--color-mainLight);
     }
 
-    &::after {
+    /* &::after {
       content: "";
       background-image: url('/images/game/old_computerscreen.svg');
       background-size: cover;
@@ -127,7 +152,7 @@
       mix-blend-mode: multiply;
 
       animation: computer 1s infinite;
-    }
+    } */
 
     /* CHARACTER SELECTED */
     .selected_character{
@@ -236,6 +261,7 @@
 }
 .pixel-corners {
   border: 8px solid transparent;
+  border-radius: 3px;
 }
 .pixel-corners--wrapper {
   width: fit-content;
