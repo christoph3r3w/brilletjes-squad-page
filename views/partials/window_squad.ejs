@@ -32,9 +32,12 @@
         <ul class="squad_filter_box pixel-corners">
             <!-- squad.id 3 -->
             <li>    
-               <form action="/" method="post">
-                    <p>squad <%= data_k.squad_id %></p>
-                    <button type="submit" name="element" value="fire"> X </button>
+               <form method="POST" action="/">
+                    <select name="nature" id="nature">
+                        <option value="fire">Fire</option>
+                        <option value="water">Water</option>
+                    </select>
+                    <button type="submit"> X </button>
                </form>
             </li>
             <!-- squad.id 4 -->
