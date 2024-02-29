@@ -17,7 +17,7 @@
     </dialog> -->
 
     <!-- <a href="/">Back</a>
-    <h1>Students of <%= data.squad_id %></h1>
+    <h1>Students of fdnd</h1>
     
     <ul>
         <% persons.forEach(person => { %>
@@ -28,25 +28,26 @@
 
     <section class="squad_filter">
         <h2>Filter</h2>
+        
         <ul class="squad_filter_box pixel-corners">
             <!-- squad.id 3 -->
-            <li>
-                <p>squad <%= data.squad_id %></p>
-               <form action="/views/partials/window_squad.ejs" method="post">
-                    <button type="submit"> X</button>
+            <li>    
+               <form action="/" method="post">
+                    <p>squad <%= data_k.squad_id %></p>
+                    <button type="submit" name="element" value="fire"> X </button>
                </form>
             </li>
             <!-- squad.id 4 -->
             <li>
-                <p>squad <%= data.squad_id %></p>
+                <p>squad <%= data_c.squad_id %></p>
             </li>
             <!-- squad.id 5 -->
             <li>
-                <p>squad <%= data.squad_id %></p>
+                <p>squad <%= data_v.squad_id %></p>
             </li>
             <!-- teachers -->
             <li>
-                <p>squad <%= data.squad_id %> teachers</p>
+                <p>squad <%= data_v.squad_id %> teachers</p>
             </li>
         </ul>
     </section>
@@ -57,7 +58,7 @@
     <ul class="squad_filter">
        
         <li>
-            <p>squad <%= data.squad_id %></p>
+            <p>squad </p>
            <form class="elmt" action="/" method="post">
 
              <label for="water">
@@ -88,15 +89,15 @@
         </li>
        
         <li>
-            <p>squad <%= data.squad_id %></p>
+            <p>squad <%= data_c.squad_id %></p>
         </li>
       
         <li>
-            <p>squad <%= data.squad_id %></p>
+            <p>squad <%= data_k.squad_id %></p>
         </li>
       
         <li>
-            <p>squad <%= data.squad_id %> teachers</p>
+            <p>squad <%= data_k.squad_id %> teachers</p>
         </li>
     </ul>
 -->
@@ -106,13 +107,13 @@
     <section class="character_grid">
         <h1>Choose your character</h1>
         <ul class="character_grid_characters pixel-corners">
-            <% if ( data.squad_id == 3 ) { %>
+            <% if ( data_k.squad_id == 3 ) { %>
               
-                <li><%= data.id %> 3</li>
+                <li><%= data_k.id %> 3</li>
             
-            <% } else if ( data.squad_id == 4) { %>
+            <% } else if ( data_c.squad_id == 4) { %>
                 <li>4</li>
-            <% } else if ( data.squad_id == 5) { %>
+            <% } else if ( data_v.squad_id == 5) { %>
                     <li>5</li>
             <% } else  { %>
                 <h1>choose squad</h1>

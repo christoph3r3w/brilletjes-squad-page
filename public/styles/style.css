@@ -287,7 +287,7 @@ body .screen:has(:hover,:focus,:active) {
 }
 
 
-/* desktop elements */
+/* desktop  */
 
 .desktop{
   position: relative;
@@ -295,15 +295,16 @@ body .screen:has(:hover,:focus,:active) {
   height: 100%;
 }
 
+/* desktop elements */
 .desktop_items{
   position: absolute;
   top: 0;
   left: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas: auto;
+  /* grid-template-areas: auto; */
   padding: 2%;
-  gap: 2cqi;
+  gap: 6%;
   /* outline: solid; */
 }
 
@@ -317,10 +318,43 @@ body .screen:has(:hover,:focus,:active) {
   
   button{color:var(--base-Text-b);>a{color:var(--base-Text-b);}}
 
-  &:is(:nth-last-of-type(1),:nth-of-type(2),:nth-last-of-type(2)) img{scale: .8;}
+  &:is(.github_icon){ img{scale: .8;}}
+  /* &:nth-last-of-type(1){ translate:300% -200% ;} */
 
-  &:nth-of-type(4){width:min-content;scale:1;background:green; button{width: max-content; >img{width: 4rem;} }}
+  /* &:nth-of-type(4){
+    width:min-content;
+    scale:1;
+    
+    display: flex;
+    place-content: center;
+    >button{
+      
+      >img{
+        width:48px ;
+        aspect-ratio: 1;} 
+      p{font-size:auto;}
+    }
+  } */
 
+
+  &:hover{
+    filter: brightness(1.05);
+  }
+
+  :focus{
+    background-color: #235ddab8;
+  }
+}
+
+.squad-games{
+  position: absolute;
+  right: 50%;
+  top: 20%;
+  aspect-ratio: 1/1;
+  padding: 1%;
+  width: min-content;
+  display: grid;
+  place-content: center;
 
   &:hover{
     filter: brightness(1.05);
@@ -387,9 +421,10 @@ body .screen:has(:hover,:focus,:active) {
 
   
   display: grid;
-  grid-template-areas:  "a a a a"
-                        "b c c c"
-                        "b c c c";
+  grid-template-columns: .5fr 1fr auto;
+  grid-template-areas:  "a a a a a"
+                        "b c c c c"
+                        "b c c c c";
 
   padding:0;
   margin: 0;
@@ -514,7 +549,7 @@ body .screen:has(:hover,:focus,:active) {
 /*** window side-bar */
 .file_explorer{
   grid-area: b;
-  width: 100%;
+  max-width: 100%;
   display: grid;
   grid-template-rows: repeat(3,1fr);
   grid-template-columns: 1fr;
@@ -579,7 +614,7 @@ body .screen:has(:hover,:focus,:active) {
   left: 37cqi;
   /* top: calc(var(--y, 0) * .98px);
   left: calc(var(--x, 0) * 1px);   */
-  width: 52cqi;
+  width: 55cqi;
   height: auto;
   aspect-ratio: 16/9;
   container-name: container-P;
@@ -587,7 +622,7 @@ body .screen:has(:hover,:focus,:active) {
 
   .window_content{
     display: grid;
-    grid-template-columns: [cnt1-start]1fr[cnt1-end cnt2-start]1fr[cnt2-end];
+    grid-template-columns: repeat(3,.9fr);
     scrollbar-gutter: stable;
     padding-top: 0%;
     height: auto;
@@ -596,13 +631,14 @@ body .screen:has(:hover,:focus,:active) {
 
 
   .profile{
-    grid-column: cnt1;
+    
     container-type:inline-size ;
     position: relative;
     place-content: start;
     display: flex;
     flex-direction: column;
-    width: 35cqw;
+    max-width: 26cqw;
+    height: 90%;
     box-shadow: .05px 0px 8px 1px var(--secondary-re);
     background-color:#8a9bfbb5;
   
@@ -614,7 +650,7 @@ body .screen:has(:hover,:focus,:active) {
       filter: blur(10px) brightness(.5) contrast(70%) opacity(.6);
       object-fit: cover;
       object-position: center;
-      height: 100cqh;
+      height: 100%;
       width: 100cqw;
       outline: solid;
     }
@@ -679,7 +715,7 @@ body .screen:has(:hover,:focus,:active) {
     }
 
     li::before{
-      content: '⭐';
+      /* content: '⭐'; */
       width: 2rem;
       height: auto;
       position: absolute;
@@ -756,17 +792,22 @@ body .screen:has(:hover,:focus,:active) {
 
 /*** game window */
 #game{
-  
+  height: 50%;
   .window_content{
     scrollbar-gutter: stable;
     padding-top: 0%;
     height: auto;
     color: var(--base-Text-b);
-    overflow: scroll;
     container-name:window_game ;
     container-type:inline-size ;
-
+    overflow-y: scroll;
+   
     
+  }
+
+  .window_content article li{
+   border-bottom: solid blue;
+   margin-top: .5rem;
   }
 
  
@@ -832,6 +873,7 @@ body .screen:has(:hover,:focus,:active) {
     
 		width: 100%;
 		overflow-y: scroll;
+    overflow-x: hidden;
 		/* height: 110cqh; */
     color: var(--base-Text-b);
 		
@@ -848,21 +890,21 @@ body .screen:has(:hover,:focus,:active) {
 
     
 
-  .window_content ul{
+    .window_content ul{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: auto;
 
     }
 
-  .window_content li{
+    .window_content li{
     display: flex;
     width: 100%;
     height: 3rem;
     outline: solid;
-  }
+    }
 
-  .fullscreen_btn{
+    .fullscreen_btn{
     position: fixed;
     bottom: 2%;
     right: 2%;
@@ -876,25 +918,25 @@ body .screen:has(:hover,:focus,:active) {
     place-content: center;
     color: var(--base-Text-b);
 
-  }
+    }
 
-  input[type=checkbox]{
+    input[type=checkbox]{
     grid-area: d;
     z-index: 2;
     width: 100%;
     aspect-ratio: 1;    
-  }
-
-  svg{
-    grid-area: d;
-    &:nth-of-type(2){
-      display: none;
     }
-  }
+
+    svg{
+      grid-area: d;
+      &:nth-of-type(2){
+        display: none;
+      }
+    }
  
 }
 
-/*** squad layout */
+/*** squad window content layout */
 #squad .window_content{
   display: grid;
   grid-template-areas: "f c c c"
@@ -903,7 +945,7 @@ body .screen:has(:hover,:focus,:active) {
                        "s s s s"
                        "s s s s";
   overflow: scroll;
-  gap: 5rem;
+  gap: 3vmin;
   padding: 1%;
   padding-bottom: 50%;
 
@@ -913,14 +955,29 @@ body .screen:has(:hover,:focus,:active) {
     flex-direction: column;
 
   
-    overflow-y: scroll;
+    .squad_filter_box{
+      width: 100%;
+      overflow-y:scroll;
+
+      &::-webkit-scrollbar{
+        display: none;
+      }
+    }
 
     /* &:nth-child(n){
       flex-grow: 1;
     } */
 
-    >label {
+    form:has(button) {
+      display: grid;
+      place-content: center;
       background-color: wheat ;
+      width: 100%;
+
+      >button{
+        width: 100%;
+        height: auto;
+      }
     }
 
     &:has(input [type="radio"]:checked) label{
