@@ -2,7 +2,7 @@
 
 <%- include('./window_head', {window_head: ''}) %>  
 
-<section class="window_content game-element-fir">
+<section class="window_content game-element-fire">
 
 
     <!-- <dialog open class="intro_screen">
@@ -104,20 +104,27 @@
 
 
     <!-- her you can choose your person/character -->
-    <section class="character_grid">
+    <section class="characters_grid">
         <h1>Choose your character</h1>
-        <ul class="character_grid_characters pixel-corners">
-            <% if ( data.squad_id == 3 ) { %>
-              
-                <li><%= data.id %> 3</li>
-            
-            <% } else if ( data.squad_id == 4) { %>
-                <li>4</li>
-            <% } else if ( data.squad_id == 5) { %>
-                    <li>5</li>
-            <% } else  { %>
-                <h1>choose squad</h1>
-            <% } %>
+        <ul class="characters_grid_characters pixel-corners">
+           
+              <% persons.forEach(person => { %>
+                <li class="li-character">
+                    <button class="chooseyourcharacterbutton">
+                        <img class="profile_bg" src="<%= person.avatar %>" alt="" >
+
+                        <% if (person.avatar == "") { %>
+                            <img src="./images/character8.png" alt="X">
+                        <% } %>
+                    </button>
+                 </li>
+            <% }) %>
+
+            <!-- <img src="/images/game/icons/air.png" alt="air icon">   
+            <img src="/images/game/icons/fire.png" alt="fire icon"> 
+            <img src="/images/game/icons/earth.png" alt="earth icon">              
+            <img src="/images/game/icons/water.png" alt="water icon">  -->
+
         </ul>
     </section>
 

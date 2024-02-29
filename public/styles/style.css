@@ -946,9 +946,8 @@ body .screen:has(:hover,:focus,:active) {
 
   .character_grid{
     grid-area: c;
-    /* background-color:  rgb(46, 107, 193); */
     display: grid;
-    grid-template-areas: auto;
+    /* grid-template-areas: auto; */
   }
 
   .selected_character{

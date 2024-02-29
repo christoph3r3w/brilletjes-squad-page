@@ -85,7 +85,6 @@
 
       .character_grid_characters {
         height: 100%;
-        /* display: block; */
         --color-border: #B8AA86;
         background-color: var(--color-card);
       }
