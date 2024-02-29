@@ -123,13 +123,26 @@
 
     <!-- here you see the selected person/character -->
     <article class="selected_character">
-        <div>
-            <div>987654</div>
+        <div class="character_card pixel-corners">
+            <header>
+                <p class="pixel-corners-no-border"><%= data.id %></p>
+                <% if (data.name) { %>
+                    <h3><%= data.name %></h3>
+                  <% } else { %>
+                    <h3>Traveler</h3>
+                    <% } %>
+            </header>
+            <div>
+                <img src="<%= data.avatar %>" alt="" height="100px" width="100px">
+            </div>
+            <div>
+
+            </div>
         </div>
         <ul>
             <li>
                 <h2>Name</h2>
-                <img src="/images/game/icons/earth.png" alt="" height="50px" width="50px">
+                <img class="pixel-corners" src="/images/game/icons/earth.png" alt="" height="60px" width="0px">
             </li>
             <li><p>Hier moet de bio komen</p></li>
             <li>

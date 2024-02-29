@@ -7,7 +7,7 @@ import fetchJson from './helpers/fetch-json.js'
 // Stel het basis endpoint in
 const apiUrl = 'https://fdnd.directus.app/items'
 const data = await fetchJson('https://fdnd.directus.app/items/person/40')
-console.log(data.id +" "+ data.data.name)
+console.log(data.data.id +" "+ data.data.name)
 
 // Haal alle squads uit de WHOIS API op
 const squadData = await fetchJson(apiUrl + '/squad')
