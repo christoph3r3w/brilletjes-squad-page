@@ -9,7 +9,7 @@ const apiUrl = 'https://fdnd.directus.app/items'
 
 const data_c = await fetchJson('https://fdnd.directus.app/items/person/40')
 const data_k = await fetchJson('https://fdnd.directus.app/items/person/41')
-const data_v = await fetchJson('https://fdnd.directus.app/items/person/15')
+const data_v = await fetchJson('https://fdnd.directus.app/items/person/28')
 console.log(data_k.data.id)
 
 // Haal alle squads uit de WHOIS API op
@@ -33,6 +33,26 @@ app.use(express.static('public'))
 app.use(express.urlencoded({extented:true}))
 
 // Maak een GET route voor de index
+app.get('/window_squad', function (request, response) {
+  // Haal alle personen uit de WHOIS API op
+  fetchJson(apiUrl + '/person').then((apiData) => {
+    // apiData bevat gegevens van alle personen uit alle squads
+    // Je zou dat hier kunnen filteren, sorteren, of zelfs aanpassen, voordat je het doorgeeft aan de view
+    
+    // Render index.ejs uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
+    response.render('window_squad', {
+      persons: apiData.data, 
+      squads: squadData.data, 
+      data_c: data_c.data,
+      data_v: data_v.data,
+      data_k: data_k.data
+    })
+    // response.render('index', data)
+
+  })
+})
+
+
 app.get('/', function (request, response) {
   // Haal alle personen uit de WHOIS API op
   fetchJson(apiUrl + '/person').then((apiData) => {

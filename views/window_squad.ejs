@@ -1,28 +1,8 @@
-<%= window_squad %>
+<%- include('./partials/head') %>
 
-<%- include('./window_head', {window_head: ''}) %>  
+ 
 
-<section class="window_content game-element-wind">
-
-
-    <!-- <dialog open class="intro_screen">
-            <h1>Choose your character</h1>
-            
-            <p>the description </p>
-
-            <form method="dialog">
-                <button class="to_squad">Let's go</button>
-            </form>
-
-    </dialog> -->
-
-    <!-- <a href="/">Back</a>
-    <h1>Students of fdnd</h1>
-    
-    <ul>
-       
-    </ul> -->
-
+<section class="window_content game-element-fire">
 
     <section class="squad_filter">
         <h2>Filter</h2>
@@ -30,13 +10,7 @@
         <ul class="squad_filter_box pixel-corners">
             <!-- squad.id 3 -->
             <li>    
-               <form method="POST" action="/">
-                    <select name="nature" id="nature">
-                        <option value="fire">Fire</option>
-                        <option value="water">Water</option>
-                    </select>
-                    <button type="submit"> X </button>
-               </form>
+                <p>squad <%= data_k.squad_id %></p>
             </li>
             <!-- squad.id 4 -->
             <li>
@@ -90,15 +64,15 @@
         </li>
        
         <li>
-            <p>squad <%= data_c.squad_id %></p>
+            <p>squad </p>
         </li>
       
         <li>
-            <p>squad <%= data_k.squad_id %></p>
+            <p>squad </p>
         </li>
       
         <li>
-            <p>squad <%= data_k.squad_id %> teachers</p>
+            <p>squad teachers</p>
         </li>
     </ul>
 -->
@@ -109,6 +83,8 @@
         <h1>Choose your character</h1>
         <ul class="character_grid_characters pixel-corners">
 
+            
+           
                 <% persons.forEach(person => { %>
                   <li class="li-character">
                       <button class="chooseyourcharacterbutton">
@@ -116,7 +92,7 @@
   
                           <% if (person.avatar == "") { %>
                               <img src="./images/character8.png" alt="X">
-                          <% } %>
+                          <% } else {"Unknown Traveler"} %>
                       </button>
                    </li>
               <% }) %>
@@ -148,7 +124,16 @@
                 <h2>Name</h2>
                 <img class="pixel-corners" src="/images/game/icons/earth.png" alt="" height="60px" width="0px">
             </li>
-            <li><p>Hier moet de bio komen</p></li>
+            <li>
+                <p>Hier moet de bio komen</p>
+                <form method="POST" action="/">
+                    <select name="nature" id="nature">
+                        <option value="fire">Fire</option>
+                        <option value="water">Water</option>
+                    </select>
+                    <button type="submit"> X </button>
+               </form>
+            </li>
             <li>
                 <ul class="stats">
                     <li><img src="/images/game/icons/hart.png" alt="" height="30px" width="30px"><p>HP 15</p></li>
@@ -187,5 +172,7 @@
 
 </section>
 
+</div>
 
 
+<%- include('./partials/foot') %>

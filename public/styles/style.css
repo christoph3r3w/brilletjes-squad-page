@@ -301,7 +301,7 @@ body .screen:has(:hover,:focus,:active) {
   top: 0;
   left: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   /* grid-template-areas: auto; */
   padding: 2%;
   gap: 6%;
@@ -316,9 +316,15 @@ body .screen:has(:hover,:focus,:active) {
   aspect-ratio: 1/1;
   scale: 1;
   
-  button{color:var(--base-Text-b);>a{color:var(--base-Text-b);}}
+  button{color:var(--base-Text-b); }
+  a{
+    color:var(--base-Text-b);
+    font-size: smaller;
+    width: min-content;
+    word-wrap: break-word;
+  }
+  &:is(.github_icon){ font-size: smaller; img{scale: .8;}}
 
-  &:is(.github_icon){ img{scale: .8;}}
   /* &:nth-last-of-type(1){ translate:300% -200% ;} */
 
   /* &:nth-of-type(4){
@@ -348,13 +354,14 @@ body .screen:has(:hover,:focus,:active) {
 
 .squad-games{
   position: absolute;
-  right: 50%;
+  right: 25%;
   top: 20%;
   aspect-ratio: 1/1;
   padding: 1%;
   width: min-content;
   display: grid;
   place-content: center;
+  color: var(--base-Text-b);
 
   &:hover{
     filter: brightness(1.05);
@@ -614,7 +621,7 @@ body .screen:has(:hover,:focus,:active) {
   left: 37cqi;
   /* top: calc(var(--y, 0) * .98px);
   left: calc(var(--x, 0) * 1px);   */
-  width: 55cqi;
+  width: 59cqi;
   height: auto;
   aspect-ratio: 16/9;
   container-name: container-P;
@@ -911,12 +918,13 @@ body .screen:has(:hover,:focus,:active) {
     z-index: 5;
     width: 2rem;
     aspect-ratio: 1;
-    border:2px solid var(--primary-y-o) ;
+    border:2px solid var(--base-b) ;
     border-radius: 40%;
     display: grid;
     grid-template-areas: "d";
     place-content: center;
-    color: var(--base-Text-b);
+    color: var(--base-w);
+    background-color: var(--base-Text-b);
 
     }
 
@@ -939,21 +947,24 @@ body .screen:has(:hover,:focus,:active) {
 /*** squad window content layout */
 #squad .window_content{
   display: grid;
-  grid-template-areas: "f c c c"
-                       "f c c c"
-                       ". c c c"
+  grid-template-areas: "f f c c"
+                       "f f c c"
                        "s s s s"
                        "s s s s";
+  grid-template-rows: repeat(4,1fr);                     
   overflow: scroll;
-  gap: 3vmin;
-  padding: 1%;
+  padding: .9%;
   padding-bottom: 50%;
+  height: 100%;
 
   .squad_filter{
     grid-area: f;
     display: flex;
     flex-direction: column;
-
+    
+    h2{
+      padding-left: 10%;
+    }
   
     .squad_filter_box{
       width: 100%;
@@ -996,7 +1007,11 @@ body .screen:has(:hover,:focus,:active) {
     grid-area: s;
     display: flex;
 
-    /* background-color:  rgb(187, 148, 85); */
+    .character_card{
+      translate: -5% -20% ;
+      z-index: 7;
+    }
+
   }
 
   

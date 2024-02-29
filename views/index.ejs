@@ -6,12 +6,13 @@
 
     <ul class="desktop_items">
       <li><button href="#"> <img src="images/icon/839.ico" alt=""><div><p>home</p></div></button></li>
-      <li><button popovertarget="team" popovertargetaction="show" > <img src="/images/icon/1012.ico" alt="personal card icon"><div><p>Team</p></div></button></li>
-      <!-- <li><button popovertarget="music" > <img src="images/icon/1221.ico" alt="music icon"><div><p>Music</p></div></button></li> -->
-      <li><button popovertarget="sprint" popovertargetaction="show" > <img src="images/icon/1224.ico" alt="sprint icon"><div><p>sprint</p></div></button></li>
+      <li><button popovertarget="team" popovertargetaction="show" > <img src="/images/icon/1012.ico" alt="personal card icon"><p>Team</p></button></li>
+      <li><button popovertarget="music" > <img src="images/icon/1221.ico" alt="music icon"><div><p>Music</p></div></button></li>
+      <li><button popovertarget="sprint" popovertargetaction="show" > <img src="images/icon/1224.ico" alt="sprint icon"><p>sprint</p></button></li>
       <li><button popovertarget="game" popovertargetaction="show" > <img src="/images/tumblr_b08776446c99e97ddb6379663d96b2ab_f289af9d_541.png" alt="game icon" width="60"><p>game center</p></button></li>
-      <li class="github_icon"><button><a href="https://github.com/christoph3r3w/brilletjes-squad-page"><img src="images/github.png" sizes="80" alt=""><div><p>github</p></div></a></button></li>
-
+      <li><a href="./person/40" popovertarget="squad" popovertargetaction="show" > <img src="/images/tumblr_342333d1f5c857936c257d367ef3fed9_e0a71cea_541.png" alt="squad icon" width="60"><p>squad game</p></a></li>
+      <li class="github_icon"><a href="https://github.com/christoph3r3w/brilletjes-squad-page"><img src="images/github.png" sizes="80" alt=""><div><p>github</p></div></a></li>
+      
     </ul>
 
     <button class="squad-games" popovertarget="squad" popovertargetaction="show" > <img src="/images/tumblr_17c0ad544b477d33533ac296a483d7f7_d1609efa_540.png" alt="squad icon" width="60"><div><p>squad-game</p></div></button>
@@ -21,6 +22,9 @@
          
       <div popover="manual" id="team" class="window_card" >
         <%- include('./partials/window_team', {window_team: '',window_type:'team'}) %> 
+      </div>
+      <div popover="manual" id="music" class="window_card" >
+        <%- include('./partials/window_music', {window_music: '',window_type:'music'}) %> 
       </div>
 
       <div popover="manual" id="sprint" class="window_card" >
@@ -32,8 +36,10 @@
       </div>
 
       <div popover="manual" id="squad" class="window_card" >
-        <%- include('./partials/window_squad', {window_squad: '',window_type:'squad'}) %> 
+        <%- include('./partials/window_squad', {window_squad:'',window_type:'squad'}) %> 
       </div>
+
+      
 
 
       <!-- start button menu -->
