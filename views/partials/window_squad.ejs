@@ -2,7 +2,7 @@
 
 <%- include('./window_head', {window_head: ''}) %>  
 
-<section class="window_content game-element-fir">
+<section class="window_content game-element-fire">
 
 
     <!-- <dialog open class="intro_screen">
@@ -107,33 +107,50 @@
 
 
     <!-- her you can choose your person/character -->
-    <section class="character_grid">
+    <section class="characters_grid">
         <h1>Choose your character</h1>
         <ul class="character_grid_characters pixel-corners">
-            <% if ( data_k.squad_id == 3 ) { %>
-              
-                <li><%= data_k.id %> 3</li>
+
             
-            <% } else if ( data_c.squad_id == 4) { %>
-                <li>4</li>
-            <% } else if ( data_v.squad_id == 5) { %>
-                    <li>5</li>
-            <% } else  { %>
-                <h1>choose squad</h1>
-            <% } %>
+           
+                <% persons.forEach(person => { %>
+                  <li class="li-character">
+                      <button class="chooseyourcharacterbutton">
+                          <img class="profile_bg" src="<%= person.avatar %>" alt="" >
+  
+                          <% if (person.avatar == "") { %>
+                              <img src="./images/character8.png" alt="X">
+                          <% } %>
+                      </button>
+                   </li>
+              <% }) %>
+
         </ul>
     </section>
 
 
     <!-- here you see the selected person/character -->
     <article class="selected_character">
-        <div>
-            <div>987654</div>
+        <div class="character_card pixel-corners">
+            <header>
+                <p class="pixel-corners-no-border"><%= data_c.id %></p>
+                <% if (data_c.name) { %>
+                    <h3><%= data_c.name %></h3>
+                  <% } else { %>
+                    <h3>Traveler</h3>
+                    <% } %>
+            </header>
+            <div>
+                <img src="<%= data_c.avatar %>" alt="" height="100px" width="100px">
+            </div>
+            <div>
+
+            </div>
         </div>
         <ul>
             <li>
                 <h2>Name</h2>
-                <img src="/images/game/icons/earth.png" alt="" height="50px" width="50px">
+                <img class="pixel-corners" src="/images/game/icons/earth.png" alt="" height="60px" width="0px">
             </li>
             <li><p>Hier moet de bio komen</p></li>
             <li>

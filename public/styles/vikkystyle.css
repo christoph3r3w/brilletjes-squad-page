@@ -1,4 +1,66 @@
 #squad .window_content{
 
-    
+    .character_grid {
+        .character_grid_characters {
+        background-color: brown !important;  
+        }
+    }
 }
+
+.characters_grid {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-left: 3em;
+
+    h1 {
+      padding: 0 .25em;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      color: var(--color-mainDark);
+      background-color: var(--color-mainLight);
+      height: 2rem;
+    }
+
+    .characters_grid_characters {
+      /* height: 25%; */
+      --color-border: #B8AA86;
+      background-color: var(--color-card);
+      overflow: auto;
+      overflow-y: scroll;
+      overflow-x: none;     
+      display: grid;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .li-character{
+        display: grid;
+        place-content: center;
+    }
+
+    .li-character:hover {
+        background-color: rgb(181, 169, 152); 
+        cursor: url(zwaard.png), pointer;
+    }
+
+    img{
+        width: 150px;
+    }
+  }
+
+  .characters_grid:has( ul li button img) ul {
+    background-color: black;
+  }
+
+
+
+  .chooseyourcharacterbutton{
+    margin-left: 5em;
+    margin-right: 5em;
+    padding: 0;
+  }
+  
+    
+  
