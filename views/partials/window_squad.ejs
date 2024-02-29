@@ -17,7 +17,7 @@
     </dialog> -->
 
     <!-- <a href="/">Back</a>
-    <h1>Students of <%= data.squad_id %></h1>
+    <h1>Students of fdnd</h1>
     
     <ul>
         <% persons.forEach(person => { %>
@@ -32,22 +32,22 @@
         <ul class="squad_filter_box pixel-corners">
             <!-- squad.id 3 -->
             <li>    
-               <form action="/views/partials/window_squad.ejs" method="post">
-                    <p>squad <%= data.squad_id %></p>
-                    <button type="submit"> X </button>
+               <form action="/" method="post">
+                    <p>squad <%= data_k.squad_id %></p>
+                    <button type="submit" name="element" value="fire"> X </button>
                </form>
             </li>
             <!-- squad.id 4 -->
             <li>
-                <p>squad <%= data.squad_id %></p>
+                <p>squad <%= data_c.squad_id %></p>
             </li>
             <!-- squad.id 5 -->
             <li>
-                <p>squad <%= data.squad_id %></p>
+                <p>squad <%= data_v.squad_id %></p>
             </li>
             <!-- teachers -->
             <li>
-                <p>squad <%= data.squad_id %> teachers</p>
+                <p>squad <%= data_v.squad_id %> teachers</p>
             </li>
         </ul>
     </section>
@@ -58,7 +58,7 @@
     <ul class="squad_filter">
        
         <li>
-            <p>squad <%= data.squad_id %></p>
+            <p>squad </p>
            <form class="elmt" action="/" method="post">
 
              <label for="water">
@@ -89,15 +89,15 @@
         </li>
        
         <li>
-            <p>squad <%= data.squad_id %></p>
+            <p>squad <%= data_c.squad_id %></p>
         </li>
       
         <li>
-            <p>squad <%= data.squad_id %></p>
+            <p>squad <%= data_k.squad_id %></p>
         </li>
       
         <li>
-            <p>squad <%= data.squad_id %> teachers</p>
+            <p>squad <%= data_k.squad_id %> teachers</p>
         </li>
     </ul>
 -->
@@ -106,24 +106,21 @@
     <!-- her you can choose your person/character -->
     <section class="characters_grid">
         <h1>Choose your character</h1>
-        <ul class="characters_grid_characters pixel-corners">
+        <ul class="character_grid_characters pixel-corners">
+
+            
            
-              <% persons.forEach(person => { %>
-                <li class="li-character">
-                    <button class="chooseyourcharacterbutton">
-                        <img class="profile_bg" src="<%= person.avatar %>" alt="" >
-
-                        <% if (person.avatar == "") { %>
-                            <img src="./images/character8.png" alt="X">
-                        <% } %>
-                    </button>
-                 </li>
-            <% }) %>
-
-            <!-- <img src="/images/game/icons/air.png" alt="air icon">   
-            <img src="/images/game/icons/fire.png" alt="fire icon"> 
-            <img src="/images/game/icons/earth.png" alt="earth icon">              
-            <img src="/images/game/icons/water.png" alt="water icon">  -->
+                <% persons.forEach(person => { %>
+                  <li class="li-character">
+                      <button class="chooseyourcharacterbutton">
+                          <img class="profile_bg" src="<%= person.avatar %>" alt="" >
+  
+                          <% if (person.avatar == "") { %>
+                              <img src="./images/character8.png" alt="X">
+                          <% } %>
+                      </button>
+                   </li>
+              <% }) %>
 
         </ul>
     </section>
@@ -131,13 +128,26 @@
 
     <!-- here you see the selected person/character -->
     <article class="selected_character">
-        <div>
-            <div>987654</div>
+        <div class="character_card pixel-corners">
+            <header>
+                <p class="pixel-corners-no-border"><%= data_c.id %></p>
+                <% if (data_c.name) { %>
+                    <h3><%= data_c.name %></h3>
+                  <% } else { %>
+                    <h3>Traveler</h3>
+                    <% } %>
+            </header>
+            <div>
+                <img src="<%= data_c.avatar %>" alt="" height="100px" width="100px">
+            </div>
+            <div>
+
+            </div>
         </div>
         <ul>
             <li>
                 <h2>Name</h2>
-                <img src="/images/game/icons/earth.png" alt="" height="50px" width="50px">
+                <img class="pixel-corners" src="/images/game/icons/earth.png" alt="" height="60px" width="0px">
             </li>
             <li><p>Hier moet de bio komen</p></li>
             <li>
