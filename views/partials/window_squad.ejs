@@ -126,15 +126,15 @@
     <article class="selected_character">
         <div class="character_card pixel-corners">
             <header>
-                <p class="pixel-corners-no-border"><%= data.id %></p>
-                <% if (data.name) { %>
-                    <h3><%= data.name %></h3>
+                <p class="pixel-corners-no-border"><%= data_c.id %></p>
+                <% if (data_c.name) { %>
+                    <h3><%= data_c.name %></h3>
                   <% } else { %>
                     <h3>Traveler</h3>
                     <% } %>
             </header>
             <div>
-                <img src="<%= data.avatar %>" alt="" height="100px" width="100px">
+                <img src="<%= data_c.avatar %>" alt="" height="100px" width="100px">
             </div>
             <div>
 
