@@ -30,6 +30,8 @@ app.set('views', './views')
 // Gebruik de map 'public' voor statische resources, zoals stylesheets, afbeeldingen en client-side JavaScript
 app.use(express.static('public'))
 
+app.use(express.urlencoded({extented:true}))
+
 // Maak een GET route voor de index
 app.get('/', function (request, response) {
   // Haal alle personen uit de WHOIS API op
@@ -49,61 +51,56 @@ app.get('/', function (request, response) {
 
   })
 })
-console.log()
-// Maak een POST route voor de index
-app.post('/', function (request, response) {
-  // Er is nog geen afhandeling van POST, redirect naar GET op /
 
-
-  response.redirect(303, '/')
-})
 
 
 // Maak een POST route voor de window squad
 // console.log("yes1")
 app.post('/', function (request, response) {
   // Er is nog geen afhandeling van POST, redirect naar GET op /
+
+  console.log(request.body)
   
-  console.log(apiResponse)
-  fetchJson('https://fdnd.directus.app/items/person/40' ).then((apiResponse) => {
+  // console.log(apiResponse)
+  // fetchJson('https://fdnd.directus.app/items/person/40' ).then((apiResponse) => {
 
-  try {
-    apiData.data.custom = JSON.parse(apiData.data.custom)
-  } catch (error) {
-    apiResponse.data.custom = []
-  }
+  // try {
+  //   apiData.data.custom = JSON.parse(apiData.data.custom)
+  // } catch (error) {
+  //   apiResponse.data.custom = []
+  // }
 
 
-  if (!apiResponse.data.custom.game_element) {
-    apiResponse.data.custom.game_element = []
-  } else if(request.body.element == "fire"){
-    console.log("fire")
-  } else if(request.body.element == "water") {
-    console.log("water")
-  } else if(request.body.element == "earth") {
-    console.log("earth")
-  } else if(request.body.element == "wind") {
-    console.log("wind")
-  }else{
-    console.log("default")
-  };
+  // if (!apiResponse.data.custom.game_element) {
+  //   apiResponse.data.custom.game_element = []
+  // } else if(request.body.element == "fire"){
+  //   console.log("fire")
+  // } else if(request.body.element == "water") {
+  //   console.log("water")
+  // } else if(request.body.element == "earth") {
+  //   console.log("earth")
+  // } else if(request.body.element == "wind") {
+  //   console.log("wind")
+  // }else{
+  //   console.log("default")
+  // };
 
-  console.log("POST request successful");
+  // console.log("POST request successful");
  
 
-  fetch('https://fdnd.directus.app/items/person/' + request.params.id, {
-      method: 'PATCH',
-      body: JSON.stringify({
-        custom: apiResponse.data.custom
-      }),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8'
-      }
-    }).then((patchResponse) => {
-      // Redirect naar de persoon pagina
-      response.redirect(303, '/detail/' + request.params.id)
-    })
-  })
+  // fetch('https://fdnd.directus.app/items/person/' + request.params.id, {
+  //     method: 'PATCH',
+  //     body: JSON.stringify({
+  //       custom: apiResponse.data.custom
+  //     }),
+  //     headers: {
+  //       'Content-type': 'application/json; charset=UTF-8'
+  //     }
+  //   }).then((patchResponse) => {
+  //     // Redirect naar de persoon pagina
+  //     response.redirect(303, '/detail/' + request.params.id)
+  //   })
+  // })
   
 
   response.redirect(303, '/');
