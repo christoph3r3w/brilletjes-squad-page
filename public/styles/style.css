@@ -925,14 +925,20 @@ body .screen:has(:hover,:focus,:active) {
     place-content: center;
     color: var(--base-w);
     background-color: var(--base-Text-b);
+    cursor: pointer;
 
+    
     }
 
     input[type=checkbox]{
     grid-area: d;
     z-index: 2;
     width: 100%;
-    aspect-ratio: 1;    
+    aspect-ratio: 1;  
+
+      &:hover{
+        filter: brightness(2);
+      }
     }
 
     svg{

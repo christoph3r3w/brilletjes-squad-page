@@ -133,7 +133,10 @@ app.get('/person/:id', function (request, response) {
   // Gebruik de request parameter id en haal de juiste persoon uit de WHOIS API op
   fetchJson(apiUrl + '/person/' + request.params.id).then((apiData) => {
     // Render person.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd person
-    response.render('person', {person: apiData.data, squads: squadData.data})
+    response.render('person', {person: apiData.data, persons: apiData.data,  squads: squadData.data,data_c: data_c.data,
+      data_v: data_v.data,
+      data_k: data_k.data
+    })
   })
 })
 

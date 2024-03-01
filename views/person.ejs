@@ -1,4 +1,5 @@
-<%- include('./partials/head') %>
+<%- include('./partials/head_2') %>
+<%- include('./partials/window_head_2', {window_head: ''}) %>  
 
 <a href="/">Back</a>
 
@@ -9,6 +10,124 @@
 
 <img src="<%= person.avatar %>" alt="">
 
+
+ 
+
+<section class="window_content game-element-fire">
+
+    <section class="squad_filter">
+        <h2>Filter</h2>
+        
+        <ul class="squad_filter_box pixel-corners">
+            <!-- squad.id 3 -->
+            <li>    
+                <p>squad <%= data_k.squad_id %></p>
+            </li>
+            <!-- squad.id 4 -->
+            <li>
+                <p>squad <%= data_c.squad_id %></p>
+            </li>
+            <!-- squad.id 5 -->
+            <li>
+                <p>squad <%= data_v.squad_id %></p>
+            </li>
+            <!-- teachers -->
+            <li>
+                <p>squad <%= data_v.squad_id %> teachers</p>
+            </li>
+        </ul>
+    </section>
+
+    
+
+
+
+
+    <!-- her you can choose your person/character -->
+    <section class="characters_grid">
+        <h1>Choose your character</h1>
+        <ul class="character_grid_characters pixel-corners">
+
+            
+           
+                
+
+        </ul>
+    </section>
+
+
+    <!-- here you see the selected person/character -->
+    <article class="selected_character">
+        <div class="character_card pixel-corners">
+            <header>
+                <p class="pixel-corners-no-border"><%= data_c.id %></p>
+                <% if (data_c.name) { %>
+                    <h3><%= data_c.name %></h3>
+                  <% } else { %>
+                    <h3>Traveler</h3>
+                    <% } %>
+            </header>
+            <div>
+                <img src="<%= data_c.avatar %>" alt="" height="100px" width="100px">
+            </div>
+            <div>
+
+            </div>
+        </div>
+        <ul>
+            <li>
+                <h2>Name</h2>
+                <img class="pixel-corners" src="/images/game/icons/earth.png" alt="" height="60px" width="0px">
+            </li>
+            <li>
+                <p>Hier moet de bio komen</p>
+                <form method="POST" action="/">
+                    <select name="nature" id="nature">
+                        <option value="fire">Fire</option>
+                        <option value="water">Water</option>
+                    </select>
+                    <button type="submit"> X </button>
+               </form>
+            </li>
+            <li>
+                <ul class="stats">
+                    <li><img src="/images/game/icons/hart.png" alt="" height="30px" width="30px"><p>HP 15</p></li>
+                    <li><img src="/images/game/icons/earth.png" alt="" height="30px" width="30px"><p>ATK 10</p></li>
+                    <li><img src="/images/game/icons/chield.png" alt="" height="30px" width="30px"><p>DEF 25</p></li>
+                </ul>
+            </li>
+        </ul>
+    </article>
+
+
+         
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="fullscreen_btn">
+        <input type="checkbox" id="full_b">
+        <!-- max -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrows-maximize" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M16 4l4 0l0 4" /><path d="M14 10l6 -6" /><path d="M8 20l-4 0l0 -4" /><path d="M4 20l6 -6" /><path d="M16 20l4 0l0 -4" /><path d="M14 14l6 6" /><path d="M8 4l-4 0l0 4" /><path d="M4 4l6 6" /></svg>
+        
+        <!-- min -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrows-minimize" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 9l4 0l0 -4" /><path d="M3 3l6 6" /><path d="M5 15l4 0l0 4" /><path d="M3 21l6 -6" /><path d="M19 9l-4 0l0 -4" /><path d="M15 9l6 -6" /><path d="M19 15l-4 0l0 4" /><path d="M15 15l6 6" /></svg>
+        
+        
+    </div>
+
+</section>
+
+</div>
 
 
 

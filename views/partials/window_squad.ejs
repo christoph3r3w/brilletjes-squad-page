@@ -2,7 +2,7 @@
 
 <%- include('./window_head', {window_head: ''}) %>  
 
-<section class="window_content game-element-wind">
+<section class="window_content game-element-earth">
 
 
     <!-- <dialog open class="intro_screen">
@@ -30,13 +30,7 @@
         <ul class="squad_filter_box pixel-corners">
             <!-- squad.id 3 -->
             <li>    
-               <form method="POST" action="/">
-                    <select name="nature" id="nature">
-                        <option value="fire">Fire</option>
-                        <option value="water">Water</option>
-                    </select>
-                    <button type="submit"> X </button>
-               </form>
+               
             </li>
             <!-- squad.id 4 -->
             <li>
@@ -148,7 +142,16 @@
                 <h2>Name</h2>
                 <img class="pixel-corners" src="/images/game/icons/earth.png" alt="" height="60px" width="0px">
             </li>
-            <li><p>Hier moet de bio komen</p></li>
+            <li>
+                <p>Hier moet de bio komen</p>
+                <form method="POST" action="/">
+                    <select name="nature" id="nature">
+                        <option value="fire">Fire</option>
+                        <option value="water">Water</option>
+                    </select>
+                    <button type="submit"> X </button>
+               </form>
+            </li>
             <li>
                 <ul class="stats">
                     <li><img src="/images/game/icons/hart.png" alt="" height="30px" width="30px"><p>HP 15</p></li>
