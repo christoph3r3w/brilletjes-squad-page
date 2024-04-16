@@ -1,8 +1,8 @@
 <%= window_squad %>
 
-<%- include('./window_head', {window_head: ''}) %>  
+<%- include('./window_head', {window_head:''}) %>  
 
-<section class="window_content game-element-earth">
+<section class="window_content game-element-water">
 
 
     <!-- <dialog open class="intro_screen">
@@ -139,18 +139,18 @@
         </div>
         <ul>
             <li>
-                <h2>Name</h2>
+                <h2><%= data_c.name %> <%= data_c.surname %></h2>
                 <img class="pixel-corners" src="/images/game/icons/earth.png" alt="" height="60px" width="0px">
             </li>
             <li>
-                <p>Hier moet de bio komen</p>
-                <form method="POST" action="/">
+                <p><%= data_c.bio %> </p>
+                <!-- <form method="POST" action="/">
                     <select name="nature" id="nature">
                         <option value="fire">Fire</option>
                         <option value="water">Water</option>
                     </select>
                     <button type="submit"> X </button>
-               </form>
+               </form> -->
             </li>
             <li>
                 <ul class="stats">
@@ -165,15 +165,6 @@
 
          
     
-
-
-
-
-
-
-
-
-
 
 
 

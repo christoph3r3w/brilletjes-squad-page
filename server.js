@@ -85,10 +85,10 @@ app.post('/', function (request, response) {
   // fetchJson('https://fdnd.directus.app/items/person/40' ).then((apiResponse) => {
 
   // try {
-  //   apiData.data.custom = JSON.parse(apiData.data.custom)
+  //   apiData.data.custom = SON.parse(apiData.data.custom)
   // } catch (error) {
   //   apiResponse.data.custom = []
-  // }
+  // }J
 
 
   // if (!apiResponse.data.custom.game_element) {
