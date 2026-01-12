@@ -41,8 +41,8 @@ app.get('/window_squad', function (request, response) {
     
     // Render index.ejs uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
     response.render('window_squad', {
-      persons: apiData.data, 
-      squads: squadData.data, 
+      persons: apiData?.data || [], 
+      squads: squadData?.data || [], 
       data_c: data_c.data,
       data_v: data_v.data,
       data_k: data_k.data
@@ -61,8 +61,8 @@ app.get('/', function (request, response) {
     
     // Render index.ejs uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
     response.render('index', {
-      persons: apiData.data, 
-      squads: squadData.data, 
+      persons: apiData?.data || [], 
+      squads: squadData?.data || [], 
       data_c: data_c.data,
       data_v: data_v.data,
       data_k: data_k.data
@@ -133,7 +133,7 @@ app.get('/person/:id', function (request, response) {
   // Gebruik de request parameter id en haal de juiste persoon uit de WHOIS API op
   fetchJson(apiUrl + '/person/' + request.params.id).then((apiData) => {
     // Render person.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd person
-    response.render('person', {person: apiData.data, persons: apiData.data,  squads: squadData.data,data_c: data_c.data,
+    response.render('person', {person: apiData?.data || [], persons: apiData?.data || [],  squads: squadData?.data || [],data_c: data_c.data,
       data_v: data_v.data,
       data_k: data_k.data
     })
