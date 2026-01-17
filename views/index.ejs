@@ -9,10 +9,9 @@
       <li><button popovertarget="team" popovertargetaction="show" > <img src="/images/icon/1012.ico" alt="personal card icon"><p>Team</p></button></li>
       <li><button popovertarget="music" > <img src="images/icon/1221.ico" alt="music icon"><div><p>Music</p></div></button></li>
       <li><button popovertarget="sprint" popovertargetaction="show" > <img src="images/icon/1224.ico" alt="sprint icon"><p>sprint</p></button></li>
-      <!-- <li><button popovertarget="game" popovertargetaction="show" > <img src="/images/tumblr_b08776446c99e97ddb6379663d96b2ab_f289af9d_541.png" alt="game icon" width="60"><p>game center</p></button></li> -->
-      <!-- <li><a href="./person/40" popovertarget="squad" popovertargetaction="show" > <img src="/images/tumblr_342333d1f5c857936c257d367ef3fed9_e0a71cea_541.png" alt="squad icon" width="60"><p>squad game</p></a></li> -->
-      <li class="github_icon"><a href="https://github.com/christoph3r3w/brilletjes-squad-page"><img src="images/github.png" sizes="80" alt=""><div><p>github</p></div></a></li>
-      
+      <!-- <li><button popovertarget="game" popovertargetaction="show" > <img src="/images/tumblr_b08776446c99e97ddb6379663d96b2ab_f289af9d_541.png" alt="game icon" width="60"><p>game center</p></button></li>
+      <li><a href="./person/40" popovertarget="squad" popovertargetaction="show" > <img src="/images/tumblr_342333d1f5c857936c257d367ef3fed9_e0a71cea_541.png" alt="squad icon" width="60"><p>squad game</p></a></li> -->
+      <li class="github_icon"><a href="https://github.com/christoph3r3w/brilletjes-squad-page"><img src="images/github.png" sizes="80" alt=""><div><p>github</p></div></a></li>  
     </ul>
 
     <button class="squad-games" popovertarget="squad" popovertargetaction="show" > <img src="/images/tumblr_17c0ad544b477d33533ac296a483d7f7_d1609efa_540.png" alt="squad icon" width="60"><div><p>squad-game</p></div></button>
@@ -39,16 +38,15 @@
         <%- include('./partials/window_squad', {window_squad:'',window_type:'squad'}) %> 
       </div>
 
-      
-
 
       <!-- start button menu -->
     <div popover anchor="start_b" id="start_menu">
       <header class="start_bar_header">
-        <img src="<%= data_c.avatar %>" alt="header avatar">
+        <!-- <img class="header_avatar" src="<%#= data_c.avatar %>" alt="header avatar"> -->
+        <span class="header_avatar"></span>
         <p><%= data_c.name %></p>
       </header>
-      <div>
+      <div class="start_content">
         <menu class="main_icons">
           <li><a href="#"> <img src="images/icon/839.ico" alt=""><div><p>home</p></div></a></li>
           <li><button popovertarget="personal"> <img src="images/chris icon lowlowres.png" alt=""><div><p>personal</p></div></button></li>
@@ -89,10 +87,10 @@
           </li>
         </menu>
       </div>
-
+      <div class="start_footer">
+        <button>Shut down</button>
+      </div>
     </div>
-
-   
 
   </section>
  
@@ -102,25 +100,15 @@
       <div class="bar"></div>
       <div class="extra_icons">
         <ul>
-          <li><button class="window_theme"><img src="images/icon/1005.ico" alt="theme button"></button></li>
-          <li><a href="#"><img src="images/icon/975.ico" alt="info button"> </a></li>
-          <li><a href="#"><img src="images/icon/952.ico" alt="internet icon"> </a></li>
+          <li><button context="Toggle theme" class="window_theme"><img width="20" height="20" src="images/moon-icons-in-xp-vista-7-8-8-1-10-and-11-styles-v0-xcqsj0ef4lff1.webp" alt="theme button"></button></li>
+          <li><a context="A school assignment 'profile card' showcasing HTML, CSS, and JavaScript skills" href="#"><img width="20" height="20" src="images/icon/975.ico" alt="info button"> </a></li>
+          <li><a context="for fun" href="#"><img width="20" height="20" src="images/icon/952.ico" alt="internet icon"> </a></li>
           <li><p class="current_T">11:11</p></li>
-        </ul>
-
-        
+        </ul>        
       </div>
     </nav>
   </footer>
-  
-
-
-
-
-  
 </main>
-
-
 
 <%- include('./partials/foot') %>
 

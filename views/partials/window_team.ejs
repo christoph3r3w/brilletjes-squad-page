@@ -14,33 +14,25 @@
             <h3><%= data_k?.surname %></h3>
             <ul class="info">
                 <li><a href=<%= data_k?.website %>>Github</a></li>
-                
-                <li><legend> squad-id</legend><p><%= data_k?.squad_id %></p></li>
             </ul>
-            
         </div>
 
         <div class="profile">
-            <img class="profile_bg" src="<%= data_c.avatar %>" alt="profile background image" >
-            <div><img src="<%=data_c.avatar %>" alt="avatar"></div>
-            <h2><%= data_c.name %></h2>
-            <h3><%= data_c.surname %></h3>
+            <img class="profile_bg" src="<%= data_c?.avatar || '/images/backyard shoot.jpg' %>" alt="profile background image" >
+            <div><img src="<%=data_c?.avatar || '/images/chris icon lowlowres.png' %>" alt="avatar"></div>
+            <h2><%= data_c?.name %></h2>
+            <h3><%= data_c?.surname %></h3>
             <ul class="info">
-                <li><a href=<%= data_c.website %>>Github</a></li>
-                
-                <li><legend> squad-id</legend><p><%= data_c.squad_id %></p></li>
-            </ul>
-            
+                <li><a href=<%= data_c?.website %>>Github</a></li>
+            </ul>          
         </div>
         <div class="profile">
-            <img class="profile_bg" src="<%= data_v?.avatar %>" alt="profile background image" >
-            <div><img src="<%= data_v?.avatar %>" alt="avatar"></div>
+            <img class="profile_bg" src="<%= data_v?.avatar || '/images/tumblr_342333d1f5c857936c257d367ef3fed9_e0a71cea_541.png' %>" alt="profile background image" >
+            <div><img src="<%= data_v?.avatar || '/images/tumblr_342333d1f5c857936c257d367ef3fed9_e0a71cea_541.png' %>" alt="avatar"></div>
             <h2><%= data_v?.name %></h2>
             <h3><%= data_v?.surname %></h3>
             <ul class="info">
                 <li><a href=<%= data_v?.website %>>Github</a></li>
-                
-                <li><legend> squad-id</legend><p><%= data_v?.squad_id %></p></li>
             </ul>
             
         </div>
