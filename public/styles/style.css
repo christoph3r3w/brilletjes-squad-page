@@ -241,20 +241,6 @@ body {
     cursor: pointer;
   }
 
-  /* &:has(.screen:hover,:focus-within){
-    background-image: url(/images/uGRFZEs.jpeg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    backdrop-filter: blur(100px) brightness(1) opacity(4);
-    transition: all 3s ease-in-out;
-    opacity: 1;
-
-    @starting-style{
-      opacity: .4;
-    }
-    
-  } */
 }
 
 /* main rectangle screen */
@@ -324,7 +310,6 @@ body .screen:has(:hover,:focus-within,:active) {
 
 
 /* desktop  */
-
 .desktop{
   position: relative;
   width: 100%;
@@ -1185,7 +1170,6 @@ body .screen:has(:hover,:focus-within,:active) {
       width: 25cqi;
       aspect-ratio: 1/1;
     }
-
   }
 
   nav .bar{
@@ -1260,6 +1244,7 @@ body .screen:has(:hover,:focus-within,:active) {
   }
 }
 
+/* start menu */
 #start_menu{
   position-anchor: --start_btn;
   contain:content ;
@@ -1322,13 +1307,13 @@ body .screen:has(:hover,:focus-within,:active) {
 
 #start_menu menu{
   background-color: var(--base-w);
+  color: var(--base-Text-bl);
 }
 
 #start_menu .main_icons{
   grid-column: 1 / span 1 ;
   grid-row: 2 / -1 ;
   padding-inline: 4%;
-
 }
 
 #start_menu .other_icon{
@@ -1352,5 +1337,11 @@ body .screen:has(:hover,:focus-within,:active) {
   button{
     background-color: transparent;
     color: var(--base-Text-w);
+  }
+}
+
+@media screen and (width < 600px) {
+  body::before{
+    inset:-10lvi
   }
 }
