@@ -13,7 +13,7 @@ theme.forEach(Element =>{
     Element.addEventListener('click',(e)=>{
         body.classList.toggle('dark_theme');
         root.classList.toggle('dark_theme');
-        console.log('it worked');
+        // console.log('it worked');
     });
     
 });

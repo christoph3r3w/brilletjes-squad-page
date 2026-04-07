@@ -337,14 +337,21 @@ body .screen:has(:hover,:focus-within,:active) {
   aspect-ratio: 1/1;
   scale: 1;
   
-  button{color:var(--base-Text-b); }
+  button{color:var(--base-Text-b);}
+
   a{
     color:var(--base-Text-b);
     font-size: smaller;
     width: min-content;
     word-wrap: break-word;
+  } 
+
+  p{text-align: center;}
+
+  &:is(.github_icon){ 
+    font-size: smaller; 
+    img{scale: .8;}
   }
-  &:is(.github_icon){ font-size: smaller; img{scale: .8;}}
 
   /* &:nth-last-of-type(1){ translate:300% -200% ;} */
 
@@ -368,7 +375,7 @@ body .screen:has(:hover,:focus-within,:active) {
     filter: brightness(1.05);
   }
 
-  :focus{
+  &:focus{
     background-color: #235ddab8;
   }
 }
@@ -1126,6 +1133,7 @@ body .screen:has(:hover,:focus-within,:active) {
     --v-s: 1.5cqi;
 
     width: 10%;
+    max-width: 6rem;
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -1168,6 +1176,7 @@ body .screen:has(:hover,:focus-within,:active) {
 
     img{
       width: 25cqi;
+      max-width: 30px;
       aspect-ratio: 1/1;
     }
   }
@@ -1248,14 +1257,14 @@ body .screen:has(:hover,:focus-within,:active) {
 #start_menu{
   position-anchor: --start_btn;
   contain:content ;
-  inset: auto auto 0cqi 0cqi  ;
+  inset: auto auto 0cqi 0cqi;
   bottom:anchor(top);
   height: 30%;
   width: 28cqw;
   border: 3px solid var(--primary-bl);
   border: none;
   transition: 700ms ease-in-out;
-  transition-property: height; ;
+  transition-property: height;
   
   
   &:popover-open{
